@@ -1,0 +1,93 @@
+@import "src/assets/styles/color.scss";
+@import "src/assets/styles/icons-mixin.scss";
+
+$container_height: 36px;
+$serch_height: 32px;
+$border-radius: 3px;
+$ranking_width: 68px;
+$serch-background: rgba(255, 255, 255, 0.8);
+$serch_txt_width: 224px;
+$serch_submit_width: 48px;
+$serch_margin_left: 3px;
+
+.serch {
+	width: $ranking_width + $serch_margin_left + $serch_txt_width + $serch_submit_width + 4px;
+	height: $container_height;
+	border-radius: $border-radius;
+	background-color: rgba(0, 0, 0, 0.2);
+
+	.link-ranking {
+		display: block;
+		float: left;
+		height: $serch_height;
+		width: $ranking_width;
+		line-height: $serch_height;
+		border-radius: $border-radius;
+		background-color: rgba(255, 255, 255, 0.8);
+		text-align: center;
+		font-size: 12px;
+		margin-left: 2px;
+		color: $red2;
+		margin-top: ( $container_height - $serch_height ) / 2;
+		text-decoration: none;
+
+		&:hover {
+			animation-name: background_color_fade_in_white;
+			animation-duration: 0.3s;
+	    	animation-fill-mode: forwards;
+		}
+
+		.i-ranking {
+			@include i-ranking;
+
+			position: relative;
+			top: -2px;
+		}
+	}
+
+	form {
+		width: $serch_txt_width + $serch_submit_width;
+		height: $serch_height;
+		background-color: $serch-background;
+		float: left;
+		margin-top: ( $container_height - $serch_height ) / 2;
+		border-radius: 3px;
+		margin-left: $serch_margin_left;
+
+		&:hover {
+			animation-name: background_color_fade_in_white;
+			animation-duration: 0.3s;
+	    	animation-fill-mode: forwards;
+		}
+
+		.serch-txt {
+		    display: block;
+		    float: left;
+			width: $serch_txt_width;
+			height: $serch_height;
+			padding: 0px 12px;
+			border-radius: 3px 0 0 3px;
+			border: 0px;
+			background-color: transparent;
+		}
+
+		.submit { 
+			width: $serch_submit_width;
+			display: block;
+			float: left;
+			height: $serch_height;
+			border: 0px;
+			border-radius: 0 3px 3px 0px;
+			background-color: transparent;
+			text-align: center;
+	        
+	        .i-serch {
+	        	@include i-serch;
+	        }
+
+	        .i-serch_hover {
+	        	@include i-serch_hover;
+	        }
+		}
+	}
+}

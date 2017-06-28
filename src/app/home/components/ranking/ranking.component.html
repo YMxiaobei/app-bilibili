@@ -1,0 +1,42 @@
+<ul class="ranking list-unstyled">
+	<li *ngFor="let data of datas;let i = index" 
+		[ngClass]="{
+			'first-three':i < 3,
+			'out-three':i >= 3
+		}"
+		(mouseover)="active=i"
+		(mouseout)="active=null"
+	>
+		<div class="show-type1" *ngIf="data.show_type===1">
+			<div class="rank"><p>{{data.rank}}</p></div>
+			<a class="title" [href]="data.url"><p>{{data.title}}</p></a>
+			<div class="latest-episode"><p>{{data.latest_episode}}</p></div>
+		</div>
+		<div class="show-type2" *ngIf="data.show_type===2">
+			<div class="rank"><span>{{data.rank}}</span></div>
+			<a class="poster" [href]="data.url">
+				<img [src]="data.img_path" width="100%" height="100%">
+			</a>
+			<div class="info">
+				<div class="title"><p>{{data.title}}}</p></div>
+				<div class="score"><p>综合评分：{{data.score}}</p></div>
+			</div>
+		</div>
+		<div class="detail-type1" *ngIf="data.detail_type===1" [ngClass]="{hidden:active!=i}">
+			<div class="top">
+				<a class="poster">
+					<img [src]="data.img_path">
+				</a>
+				<div class="info">
+					<a class="title">{{data.title}}</a>
+					<div class="latest-episode">连载中，更新至第{{data.latest_episode}}话</div>
+				</div>
+			</div>
+			<div class="bottom">
+				<span class="play-amount">{{data.play_amount}}</span>
+				<span class="commond-amount">{{data.commond_amount}}</span>
+				<span class="heart-amount">{{data.heart_amount}}</span>
+			</div>
+		</div>
+	</li>
+</ul>

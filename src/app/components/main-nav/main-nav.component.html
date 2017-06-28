@@ -1,0 +1,35 @@
+<div class="main-nav">
+	<ul class="list-unstyled nav-list">
+		<li>
+			<a class="home-page" href="javascript:;">
+				<div class="i-home">
+					<span></span>
+				</div>
+				<div class="txt" >
+					<span>首页</span>
+				</div>
+			</a>
+		</li>
+		<li *ngFor="let link of links">
+			<nav-link [data]="link"></nav-link>
+		</li>
+		<li>
+			<a href="javascript:;" class="ground">
+				<span class="i-ground"></span>
+				<span txt>广场</span>
+			</a>
+		</li>
+		<li>
+			<a href="javascript:;"  class="live">
+				<span class="i-camera"></span>
+				<span txt>直播</span>
+			</a>
+		</li>
+		<li>
+			<a href="javascript:;" class="xiaoheiwu">
+				<span class="i-xiaoheiwu"></span>
+				<span txt>小黑</span>
+			</a>
+		</li>
+	</ul>
+</div>

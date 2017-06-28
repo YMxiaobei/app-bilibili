@@ -1,0 +1,37 @@
+<div class="classify-section">
+	<div class="left">
+		<div class="header">
+			<div class="title">番剧动态</div>
+			<div class="nav">
+				<ul class="list-unstyled">
+					<li><a href="javascript:;">有新动态</a></li>
+					<li><a href="javascript:;">最新投稿</a></li>
+				</ul>
+			</div>
+			<div class="hot">
+				<span class="i-hot"></span>
+				<a class="txt" href="javascript:;">相信的心就是你的魔法</a>
+			</div>
+			<a class="btn-more" href="javascript:;" 
+				(mouseover)="i_arrow_right_right='8px'"
+				(mouseout)="i_arrow_right_right='11px'"
+			>
+				<span class="txt">更多</span>
+				<span class="i-arrow-right" [ngStyle]="{right:i_arrow_right_right}"></span>
+			</a>
+			<a class="live-amount" href="javascript:;" 
+				(mouseover)="i_rotate_transform='rotate(360deg)'"
+				(mouseout)="i_rotate_transform='rotate(0deg)'"
+			>
+				<span class="i-rotate" [ngStyle]="{'-moz-transform': i_rotate_transform}"></span>
+				<span class="txt">8720条新动态</span>
+			</a>
+		</div>
+		<div class="content">
+			<ng-content select=".classify-section-left"></ng-content>
+		</div>
+	</div>
+	<div class="right">
+		<ng-content select=".classify-section-right"></ng-content>
+	</div>
+</div>

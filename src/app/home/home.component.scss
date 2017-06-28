@@ -1,0 +1,119 @@
+@import "src/assets/styles/icons-mixin.scss";
+@import "src/assets/styles/color.scss";
+@import "src/assets/styles/variable.scss";
+
+$margin-top: 30px;
+
+.root-popularize-section {
+	margin-top: $margin-top;
+}
+
+.root-classify-section2 {
+	margin-top: $margin-top;
+
+	.ranking {
+		width: 100%;
+		height: 100%;
+		
+		.header {
+			width: 100%;
+			height: 24px;
+
+			.title {
+				height: 100%;
+				float: left;
+				font-size: 18px;
+				width: 36px;
+				line-height: 24px;
+				text-align: center;
+			}
+
+			.scope {
+				height: 100%;
+				font-size: 12px;
+				float: right;
+
+				.select {
+					height: 100%;
+					width: 60px;
+					border: 1px solid $gray1;
+					border-radius: 5px;
+					padding-left: 5px;
+					box-sizing: content;
+					position: relative;
+					background: white;
+					overflow: hidden;
+
+					span {
+						width: 100%;
+						position: absolute;
+						display: block;
+						box-sizing: content;
+						padding-left: 5px;
+					}
+
+					span.selected {
+						height: 100%;
+						top: 0px;
+						left: 0px;
+						line-height: 24px;
+					}
+
+					span.unselected {
+						height: 30px;
+						line-height: 30px;
+						top: 24px;
+						left: 0px;
+						line-height: 30px;
+					}
+
+					.i-arrow-down {
+						@include i-arrow-down;
+
+						position: absolute;
+						right: 3px;
+						top: 9px;
+					}
+				}
+			}
+		}
+
+		.btn-more {
+			width: 100%;
+			height: 26px;
+			border-radius: 5px;
+			display: block;
+			background-color: $gray1;
+			color: #222;
+			margin-top: 20px;
+			line-height: 26px;
+			text-align: center;
+			font-size: 12px;
+			-moz-transition: background-color 0.2s;
+
+			&:hover {
+				background-color: #ddd;
+			}
+		}
+	}
+}
+
+.root-fanju-live {
+	margin-top: 30px;
+
+	.classify-section-left {
+		ul {
+			margin-left: -20px;
+			li {
+				float: left;
+				margin-left: 20px;
+				margin-bottom: 20px;
+			}
+		}
+	}
+
+	.classify-section-right {
+		
+	}
+}
+

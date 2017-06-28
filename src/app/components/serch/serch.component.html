@@ -1,0 +1,17 @@
+<div class="serch">
+	<a href="javascript:;" class="link-ranking">
+		<span class="i-ranking"></span>
+		<span class="txt">排行榜</span>
+	</a>
+	<form (mouseover)="serch_hover=true" (mouseout)="serch_hover=false">
+		<input type="text" name="serch-txt" class="serch-txt" [placeholder]="_placeholder">
+		<button type="submit" name="submit" class="submit">
+			<span 
+				[ngClass]="{
+					'i-serch':!serch_hover,
+					'i-serch_hover':serch_hover
+				}"
+			></span>
+		</button>	
+	</form>
+</div>

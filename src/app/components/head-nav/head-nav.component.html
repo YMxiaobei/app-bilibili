@@ -1,0 +1,74 @@
+<div class="head-nav">
+	<nav>
+		<ul class="list-unstyled">
+			<li>
+				<a href="javascript:;" title="主站"><span class="i-TV"></span><span class="txt-home_page">主站</span></a>
+			</li>
+			<li>
+				<a href="javascript:;" title="画友">画友</a>
+			</li>
+			<li>
+				<a href="javascript:;" title="游戏中心">游戏中心</a>
+			</li>
+			<li>
+				<a href="javascript:;" title="直播">直播</a>
+			</li>
+			<li>
+				<a href="javascript:;" title="周边">周边</a>
+			</li>
+			<li class="mobile-terminal" (mouseover)="show('qrcode')" (mouseout)="hide('qrcode')">
+				<a href="javascript:;" title="移动端" >移动端</a>
+				<div class="root-QRcode" 
+					[ngClass]="{
+						'fade-in':qrcode_status==='show',
+						'fade-out':qrcode_status==='hiding',
+						'hide':qrcode_status==='hide'
+					}"
+				>
+					<qrcode></qrcode>
+				</div>
+			</li>
+		</ul>
+	</nav>
+	<div class="head-right">
+		<ul class="list-unstyled">
+			<li class="sign-in">
+				<a href="javascript:;">登录</a>
+				<span class="dividing-line"></span>
+			</li>
+			<li class="sign-up">
+				<a href="javascript:;">注册</a>
+			</li>
+			<li class="history" (mouseover)="show('historyDetail')" (mouseout)="hide('historyDetail')"> 
+				<a href="javascript:;" >历史</a>
+				<div class="root-histiry-detail"
+  					[ngClass]="{
+  						'fade-in':historyDetail_status==='show', 
+  						'fade-out':historyDetail_status==='hiding', 
+  						'hide':historyDetail_status==='hide'
+					}"
+				>
+					<history-detail></history-detail>
+				</div>
+				
+			</li>
+			<li class="contribute" (mouseover)="show('contributeMore')" (mouseout)="hide('contributeMore')"> 
+				<a href="javascript:;" >投稿</a>
+				<div class="root-contribute-more fade-in"
+					[ngClass]="{
+						'fade-in':contributeMore_status==='show', 
+						'fade-out':contributeMore_status==='hiding', 
+						'hide':contributeMore_status==='hide'
+					}"
+				>
+					<contribute-more></contribute-more>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="root-serch">
+		<serch [_placeholder]="'输入要搜索的信息'"></serch>	
+	</div>
+</div>
+
+

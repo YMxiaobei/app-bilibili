@@ -1,0 +1,15 @@
+@import "src/assets/styles/variable.scss";
+
+$history_detail_width: 450px;
+
+.history-detail {
+	height: 200px;
+	background-color: white;
+	width: $history_detail_width;
+	position: absolute;
+	top: $head_nav_height;
+	left: -($history_detail_width / 2 - 30);
+	border-radius: $border_radius;
+	box-shadow: 2px 1px 3px 0px #ddd;
+	z-index: 999;
+}

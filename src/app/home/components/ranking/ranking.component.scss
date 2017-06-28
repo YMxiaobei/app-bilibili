@@ -1,0 +1,203 @@
+@import "src/assets/styles/icons-mixin.scss";
+@import "src/assets/styles/color.scss";
+@import "src/assets/styles/variable.scss";
+
+$width: 260px;
+
+$li-height1: 18px;
+
+$li-height2: 50px;
+
+$poster-width: 80px;
+
+$info-width: 150px;
+
+$detail-width1: 320px;
+
+$detail-height1: 138px;
+
+$detail-top-height: 98px;
+
+$info-width: 225px;
+
+$poster-size: 72px;
+
+
+.ranking {
+	width: $width;
+
+	li {
+		display: inline-block;
+		width: 100%;
+		margin-top: 20px;
+		position: relative;
+
+		.show-type1 {
+			height: $li-height1;
+			line-height: $li-height1;
+			font-size: 12px;
+			display: inline-block;
+
+			.rank {
+				display: inline-block;
+				width: $li-height1;
+				height: $li-height1;
+				line-height: $li-height1;
+				border-radius: 3px;
+				
+				color: white;
+				font-weight: bold;
+				text-align: center;
+			}
+
+			.title {
+				height: 100%;
+				display: inline-block;
+				line-height: $li-height1;
+				margin-left: 5px;
+				color: black;
+			}
+
+			.latest-episode {
+				height: 100%;
+				display: inline-block;
+				line-height: $li-height1;
+				color: $font-color2;
+				margin-left: 5px;
+			}
+		}
+
+		.show-type2 {
+			height: $li-height2;
+			font-size: 12px;
+			display: inline-block;
+
+			.poster {
+				display: inline-block;
+				width: $poster-width;
+				height: 100%;
+				vertical-align: top;
+			}
+
+			.info {
+				display: inline-block;
+				width: $info-width;
+				height: 100%;
+				margin-left: 5px;
+				vertical-align: top;
+				position: relative;
+				line-height: 14px;
+
+				.title {
+					width: 100%;
+				}
+
+				.score {
+					width: 100%;
+					color: $font-color2;
+				}
+			}
+		}
+ 	}
+
+ 	.detail-type1 {
+ 		width: $detail-width1;
+ 		height: $detail-height1;
+ 		border-radius: 5px;
+ 		border: 1px solid #ddd;
+ 		box-shadow: 2px 2px 3px 1px rgba(0,0,0,0.2);
+ 		font-size: 12px;
+ 		position: absolute;
+ 		left: 0px;
+ 		top: - ( $detail-height1 + 30 );
+ 		background-color: white;
+
+ 		.top {
+ 			width: 100%;
+ 			height: $detail-top-height;
+ 			border-bottom: 1px solid #ddd;
+
+ 			.poster {
+ 				dsiplay: block;
+ 				width: $poster-size;
+ 				height: $poster-size;
+ 				margin-left: 12px;
+ 				margin-top: 12px;
+ 				float: left;
+ 			}
+
+ 			.info {
+ 				dsiplay: block;
+ 				width: $info-width;
+ 				height: 100%;
+ 				margin-left: $detail-width1 - $poster-size - $info-width - 14;
+ 				margin-top: 12px;
+ 				float: left;
+ 				line-height: 20px;
+
+ 				.title {
+ 					display: inline-block;
+ 					width: 100%;
+ 					color: black;
+ 				}
+
+ 				.latest-episode {
+ 					display: inline-block;
+ 					width: 100%;
+ 					color: $font-color2; 
+ 				}
+ 			}
+ 		}
+
+ 		.bottom {
+ 			text-align: left;
+ 			color: $font-color2;
+
+ 			span {
+ 				display: inline-block;
+ 				box-sizing: content;
+ 			}
+
+ 			.play-amount:before {
+ 				content: "";
+ 				@include i-play;
+ 				margin-right: 2px;
+ 				position: relative;
+ 				bottom: 2px;
+ 				margin-left: 12px;
+ 			}
+
+ 			.commond-amount:before {
+ 				content: "";
+ 				@include i-comments;
+ 				margin-right:2px;
+ 				position: relative;
+ 				bottom: 1px;
+ 				margin-left: 40px;
+ 			}
+
+ 			.heart-amount:before {
+ 				content: "";
+ 				@include i-comments;
+ 				margin-right:2px;
+ 				position: relative;
+ 				bottom: 1px;
+ 				margin-left: 40px;
+ 			}
+ 		}
+ 	}
+}
+
+.first-three {
+	.rank {
+		background-color: $red3;
+		color: white;
+		font-weight: bold;
+	}
+}
+
+.out-three {
+	.rank {
+		background-color: $gray1;
+	}
+}

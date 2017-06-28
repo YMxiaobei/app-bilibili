@@ -1,0 +1,55 @@
+@import "src/assets/styles/icons-mixin.scss";
+@import "src/assets/styles/color.scss";
+@import "src/assets/styles/variable.scss";
+
+$contribute_more_width: 230px;
+$contribute_more_height: 70px;
+
+.contribute-more {
+	width: $contribute_more_width;
+	height: $contribute_more_height;
+	background-color: white;
+	border-radius: 0px 0px 3px 3px;
+
+	a {
+    	height: 100%;
+    	width: $contribute_more_width / 3;
+    	display: block;
+    	float: left;
+    	text-decoration: none;
+    	color: $red2;
+
+    	.i-container {
+    		width: 100%;
+    		height: 60%;
+    		text-align: center;
+    	}
+
+    	.txt {
+    		display: block;
+    		height: 40%;
+    		line-height: $contribute_more_height * 0.4;
+    		width: 100%;
+    		color: $red2;
+    	}
+
+    	&:hover {
+    		background-color: #ddd;
+    	}
+	}
+}
+
+.i-v_contribute {
+	@include i-v_contribute;
+	margin-top: 15px;
+}
+
+.i-v_manage {
+	@include i-v_manage;
+	margin-top: 15px;
+}
+
+.i-create_center {
+	@include i-create_center;
+	margin-top: 15px;
+}

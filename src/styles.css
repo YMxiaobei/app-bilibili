@@ -1,0 +1,137 @@
+/*****************/
+@keyframes fade_in
+{
+	0% {
+		opacity: 0;
+	}
+	100% {opacity: 1;}
+}
+
+@-moz-keyframes fade_in /* Firefox */
+{
+	0% {
+		opacity: 0;
+	}
+	100% {opacity: 1;}
+}
+
+@-webkit-keyframes fade_in /* Safari 和 Chrome */
+{
+	0% {
+		opacity: 0;
+	}
+	100% {opacity: 1;}
+}
+
+@-o-keyframes fade_in /* Opera */
+{
+	0% {
+		opacity: 0;
+	}
+	100% {opacity: 1;}
+}
+
+/*****************/
+
+@keyframes fade_out
+{
+	0% {opacity: 1;}
+	100% {
+		opacity: 0;
+	}
+}
+
+@-moz-keyframes fade_out /* Firefox */
+{
+	0% {opacity: 1;}
+	100% {
+		opacity: 0;
+	}
+}
+
+@-webkit-keyframes fade_out /* Safari 和 Chrome */
+{
+	0% {opacity: 1;}
+	100% {
+		opacity: 0;
+		display: none;
+	}
+}
+
+@-o-keyframes fade_out /* Opera */
+{
+	0% {opacity: 1;}
+	100% {
+		opacity: 0;
+	}
+}
+
+/*****************/
+
+
+
+/*****************/
+
+@keyframes background_color_fade_in_gray1
+{
+	0% {background-color: rgba( 211, 211, 211, 0 );}
+	100% {background-color: rgba( 211, 211, 211, 0.5 );}
+}
+
+@-moz-keyframes background_color_fade_in_gray1 /* Firefox */
+{
+	0% {background-color: rgba( 211, 211, 211, 0 );}
+	100% {background-color: rgba( 211, 211, 211, 0.5 );}
+}
+
+@-webkit-keyframes background_color_fade_in_gray1 /* Safari 和 Chrome */
+{
+	0% {background-color: rgba( 211, 211, 211, 0 );}
+	100% {background-color: rgba( 211, 211, 211, 0.5 );}
+}
+
+@-o-keyframes background_color_fade_in_gray1 /* Opera */
+{
+	0% {background-color: rgba( 211, 211, 211, 0 );}
+	100% {background-color: rgba( 211, 211, 211, 0.5 );}
+}
+
+/******************/
+
+@keyframes background_color_fade_in_white
+{
+	0% {background-color: rgba( 255, 255, 255, 0.8 );}
+	100% {background-color: rgba( 255, 255, 255, 1 );}
+}
+
+@-moz-keyframes background_color_fade_in_white /* Firefox */
+{
+	0% {background-color: rgba( 255, 255, 255, 0.8 );}
+	100% {background-color: rgba( 255, 255, 255, 1 );}
+}
+
+@-webkit-keyframes background_color_fade_in_white /* Safari 和 Chrome */
+{
+	0% {background-color: rgba( 255, 255, 255, 0.8 );}
+	100% {background-color: rgba( 255, 255, 255, 1 );}
+}
+
+@-o-keyframes background_color_fade_in_white /* Opera */
+{
+	0% {background-color: rgba( 255, 255, 255, 0.8 );}
+	100% {background-color: rgba( 255, 255, 255, 1 );}
+}
+
+/******************/
+
+.fade-in {
+	display: block;
+	animation-name: fade_in;
+	animation-duration: 0.5s;
+}
+
+.fade-out {
+	animation-name: fade_out;
+	animation-duration: 0.5s;
+	display: none;
+}

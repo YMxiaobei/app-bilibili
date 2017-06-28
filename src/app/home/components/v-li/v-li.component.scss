@@ -1,0 +1,56 @@
+@import "src/assets/styles/icons-mixin.scss";
+@import "src/assets/styles/color.scss";
+@import "src/assets/styles/variable.scss";
+
+$width: 178px;
+$height: 72px;
+$poster-width: 72px;
+$poster-height: 72px;
+$info-width: 96px;
+
+.v-li {
+	width: $width;
+	height: $height;
+
+	.poster {
+		width: $poster-width;
+		height: $poster-height;
+		display: block;
+		float: left;
+	}
+
+	.info {
+		width: $info-width;
+		height: 100%;
+		margin-left: $width - $poster-width - $info-width;
+		float: left;
+		font-size: 12px;
+		color: $font-color1;
+		position: relative;
+
+		a {
+			color: $font-color1;
+		}
+
+		.latest-episode {
+			color: $font-color2;
+			position: absolute;
+			bottom: 0px;
+			left: 0px;
+			width: 100%;
+
+			span {
+				width: 36px;
+				height: 18px;
+				border-radius: 9px;
+				display: inline-block;
+				line-height: 18px;
+				background-color: $red3;
+				color: white;
+				text-align: center;
+				margin-left: 3px;
+			}
+		}
+	}
+
+}

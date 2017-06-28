@@ -1,0 +1,66 @@
+@import "src/assets/styles/icons-mixin.scss";
+@import "src/assets/styles/color.scss";
+@import "src/assets/styles/variable.scss";
+
+$height: 62px;
+
+.main-nav {
+	width: 100%;
+	height: $height;
+	padding: 6px 0px;
+
+	ul  {
+		li {
+			display: inline-block;
+			margin-right: 12px;
+			vertical-align: top;
+		}
+	}
+}
+
+.home-page {
+	width: 48px;
+	height: 40px;
+	display: block;
+	position: relative;
+	top: -4px;
+
+	.txt {
+		width: 100%;
+		height: 26px;
+		color: $font-color1;
+		text-align: center;
+	}	
+
+	.i-home {
+		width: 100%;
+		height: 21px;
+		text-align: center;
+		span {
+			@include i-home;
+		}
+	}
+}
+
+.ground, .live, .xiaoheiwu {
+	height: 40px;
+	line-height: 40px;
+	display: inline-block;
+	text-align: center;
+	font-size: 16px;
+	position: relative;
+	margin: 0px 10px;
+	color: $font-color1;
+}
+
+.i-camera {
+	@include i-camera;
+}
+
+.i-xiaoheiwu {
+	@include i-xiaoheiwu;
+}
+
+.i-ground {
+	@include i-ground;
+}

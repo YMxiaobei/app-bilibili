@@ -1,0 +1,15 @@
+
+.QRcode-frame {
+	width: 259px;
+	height: 174px;
+	background-image: url( /assets/img/QRcode-frame.png );
+    background-repeat: no-repeat;
+
+	.QRcode {
+		width: 259px;
+		height: 174px;
+		background-image: url( /assets/img/QRcode.png );
+		background-repeat: no-repeat;
+		background-position: 82px 32px;
+	}
+}

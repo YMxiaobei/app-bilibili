@@ -1,0 +1,44 @@
+<div class="classify-section2">
+	<div class="left">
+		<div class="header">
+			<div class="title">
+				<span class="i-fanju"></span>
+				<span class="txt">番剧</span>
+			</div>
+			<div class="nav">
+				<ul class="list-unstyled">
+					<li *ngFor="let data of navData;let i = index" [ngClass]="{selected:nav_selected===i}">
+						<a href="javascript:;" (click)="nav_selected=i">{{data.title}}</a>
+						<i class="handle" [ngClass]="{hidden:nav_selected!=i}"></i>
+					</li>
+				</ul>
+			</div>
+			<a class="schedule" href="javascript:;">
+				<span>新番时间表 ></span>
+			</a>
+		</div>
+		<div class="content">
+			<ul class="list-unstyled">
+				<li><v-li></v-li></li>
+				<li><v-li></v-li></li>
+				<li><v-li></v-li></li>
+				<li><v-li></v-li></li>
+				<li><v-li></v-li></li>
+				<li><v-li></v-li></li>
+				<li><v-li></v-li></li>
+				<li><v-li></v-li></li>
+				<li><v-li></v-li></li>
+				<li><v-li></v-li></li>
+				<li><v-li></v-li></li>
+				<li><v-li></v-li></li>
+				<li><v-li></v-li></li>
+				<li><v-li></v-li></li>
+				<li><v-li></v-li></li>
+				<li><v-li></v-li></li>
+			</ul>
+		</div>
+	</div>
+	<div class="right">
+		<ng-content></ng-content>
+	</div>
+</div>

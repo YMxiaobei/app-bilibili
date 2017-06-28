@@ -1,0 +1,24 @@
+<div class="img-slide">
+	<div class="stage">
+		<ul class="posters list-unstyled" [ngStyle]="{'margin-left.px':state_save.state}">	
+			<li class="poster" *ngFor="let poster of data">
+				<img [src]="poster.img_path" class="img" width="100%" height="100%">
+			</li>
+		</ul>
+		<div class="introduce">
+			<ul class=" list-unstyled">
+				<li *ngFor="let poster of data;let i = index;" [ngClass]="{hide:selected!=i+1}">{{poster.introduce}}</li>
+			</ul>
+		</div>	
+	</div>
+	<div class="controlor">
+		<ul class="list-unstyled">
+			<li *ngFor="let poster of data;let i=index;" 
+				[ngStyle]="{'width.px':controll_state_save[i].state}"
+				[ngClass]="{selected:selected===i+1}"
+				(mouseover)="select (i+1)"
+			>
+			</li>
+		</ul>
+	</div>
+</div>

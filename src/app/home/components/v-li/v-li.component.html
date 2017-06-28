@@ -1,0 +1,13 @@
+<div class="v-li">
+	<a [href]="data.url" class="poster" [title]="data.title">
+		<img [src]="data.img_path" width="100%" height="100%">
+	</a>
+	<div class="info">
+		<a [href]="data.url" class="title" [title]="data.title">
+			<span>{{data.title}}</span>
+		</a>
+		<div class="latest-episode">
+			更新至<span>{{data.latest_episode}}话</span>
+		</div>
+	</div>
+</div>

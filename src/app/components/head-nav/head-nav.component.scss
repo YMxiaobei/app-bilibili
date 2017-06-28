@@ -1,0 +1,118 @@
+@import "src/assets/styles/icons-mixin.scss";
+@import "src/assets/styles/color.scss";
+@import "src/assets/styles/variable.scss";
+
+$hover_color: rgba( 211, 211, 211, 0.5 );
+$border_radius: 3px;
+
+@mixin link {
+	ul, li {
+		display: block;
+		height:  $head_nav_height;
+	}
+
+	li {
+		height: 100%;
+		float: left;
+		position: relative;
+
+		a {
+			height: 100%;
+			padding: 0px 10px;
+			display: inline-block;
+			color: white;
+			text-decoration: none;
+			font-size: 13px;
+			line-height: $head_nav_height;
+
+			&:hover {
+		    	animation-name: background_color_fade_in_gray1;
+		    	animation-duration: 0.5s;
+		    	animation-fill-mode: forwards;
+			}	
+		}
+	}
+}
+
+.head-nav {
+	width: $main_width;
+	height: $head_nav_height;
+	position: relative;
+	margin: 0px auto;
+}
+
+nav {
+    height: $head_nav_height;
+    display: inline-block;
+
+   	@include link;		
+}
+
+.head-right {
+	display: inline-block;
+	height: $head_nav_height;
+	position: absolute;
+	right: 10px;
+
+	@include link;
+
+	.sign-in {
+		position: relative
+	}
+
+	.contribute {
+		width: 58px;
+		height: 48px;
+		background-color: $red1;
+		text-align: center;
+		padding: 0px;
+		border-radius: 0px 0px 6px 6px;
+
+		a {
+			display: block;
+		}
+	}
+}
+
+.dividing-line {
+	display: block;
+	width: 1px;
+	height: 15px;
+	position: absolute;
+	right: -1px;
+	background-color: white;
+	top: ( $head_nav_height - 15 ) / 2;
+}
+
+.i-TV {
+	@include i-TV;
+
+	position: relative;
+	bottom: 1px;
+}
+
+.txt-home_page {
+	margin-left: 6px;
+}
+
+.root-QRcode {
+    position: absolute;
+    left: -20px;
+    top: $head_nav_height;
+}
+
+
+
+.root-contribute-more {
+	position: absolute;
+	top: $head_nav_height;
+	right: 0px;
+}
+
+.root-serch {
+	float: right;
+	margin-top: $head_nav_height + 80px;
+	margin-right: 10px;
+}
+
+

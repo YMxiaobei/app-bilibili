@@ -1,0 +1,25 @@
+<a class="nav-link" [href]="url" (mouseover)="active=true" (mouseout)="active=false">
+	<div class="statistics-container">
+		<span class="statistics">{{data.statistics}}</span>
+	</div>
+	<div class="parent-link" >
+		<span class="txt">{{data.txt}}</span>
+		<ul class="children-link list-unstyled" *ngIf="data.children" [ngClass]="{hide:!active}">
+			<li *ngFor="let child of data.children; let i = index;">
+				<div href="javascript:;" class="link" 
+					(mouseout)="children_link_reset=i;children_link_active=null" 
+					(mouseover)="children_link_active=i"
+					[ngClass]="{'animation-move-right':children_link_reset===i}"
+				>
+					<span class="txt">{{child.txt}}</span>
+					<span
+						[ngClass]="{
+							'animation-move-left':children_link_active===i,
+							'i-hover':children_link_reset===i
+						}"
+					></span>
+				</div>
+			</li>
+		</ul>
+	</div>
+</a>
