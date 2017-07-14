@@ -1,0 +1,25 @@
+@import "~compass-mixins/lib/compass";
+@import "src/assets/styles/icons-mixin.scss";
+@import "src/assets/styles/color.scss";
+@import "src/assets/styles/variable.scss";
+
+.main {
+	width: 100%;
+
+	.header {
+		width: $main_width;
+		margin: 0px auto 0px auto;
+		height: 125px;
+	}
+
+	.video {
+		width: 100%;
+		background-color: #f6f9fa;
+
+		.player-wrap {
+			width: $main_width;
+			margin: 20px auto 0px auto;
+		}
+	}
+}
+

@@ -1,0 +1,36 @@
+@import "~compass-mixins/lib/compass";
+@import "src/assets/styles/icons-mixin.scss";
+@import "src/assets/styles/color.scss";
+@import "src/assets/styles/variable.scss";
+
+$left-width: 860px;
+$left-header-height: 48px;
+
+.main {
+	width: 100%;
+
+	div {
+		display: inline-block;
+	}
+
+	.left {
+		width: $left-width;
+
+		.top-ad {
+			width: 100%;
+			height: $left-header-height;
+			background-color: #353535;
+
+			.main {
+				width: $left-width - 20;
+				height: $left-header-height - 20;
+				margin: 10px;
+
+				.btn-pre {
+					float: left;
+					
+				} 
+			}
+		}
+	}
+}

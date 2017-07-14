@@ -1,0 +1,228 @@
+@import "~compass-mixins/lib/compass";
+@import "src/assets/styles/icons-mixin.scss";
+@import "src/assets/styles/color.scss";
+@import "src/assets/styles/variable.scss";
+
+$left_width: 640px;
+
+.main {
+	width: 100%;
+	height: 100%;
+	color: $font-color1;
+
+	.left {
+		width: $left_width;
+		height: 100%;
+		float: left;
+
+		.title {
+			width: 100%;
+			height: 40px;
+			line-height: 40px;
+			font-size: 18px;
+			margin-top: 0px;
+			margin-bottom: 0px;
+		}
+
+		.info {
+			width: 100%;
+
+			div, li {
+				display: inline-block;
+			}
+
+			a {
+				color: $font-color2;
+			}
+
+			.content1 {
+				width: 100%;
+				font-size: 12px;
+				color: $font-color2;
+
+				ul {
+					margin-bottom: 0px;
+					width: 100%;
+					display: inline-block;
+					height: 12px;
+				}
+
+				.time, .complaints {
+					margin-left: 40px;
+				}
+
+				.path {
+
+				}
+			}
+
+			.content2 {
+				width: 100%;
+				height: 60px;
+				font-size: 12px;
+				line-height: 60px;
+				margin-top: -5px;
+
+				ul {
+					width: 100%;
+					height: 100%;
+					line-height: 60px;
+
+					li {
+						vertical-align: middle;
+					}
+
+					.static {
+						width: 98px;
+						height: 28px;
+						line-height: 28px;
+
+						.play-amount {
+							.icon {
+								@include i-play-big;
+							}
+
+							.amount {
+								margin-left: 10px;
+							}
+						}
+
+						.reconmand-amount {
+							.icon {
+								@include i-recomand-big;
+							}
+
+							.amount {
+								margin-left: 10px;
+							}
+						}
+					}
+
+					.anim {
+						width: 119px;
+						height: 28px;
+						line-height: 28px;
+						cursor: pointer;
+
+						.icon {
+							width: 60px;
+							height: 60px;
+							display: inline-block;
+							vertical-align: top;
+							margin-top: -17px;
+						}
+
+						.amount {
+							margin-left: -10px;
+						}
+					}
+				}
+
+				
+			}
+		}
+	}
+
+	.right {
+		width: $main_width - $left_width;
+		float: right;
+		height: 100%;
+		display: block;
+
+		.user {
+			float: right;
+		}
+
+		div {
+			display: inline-block;
+		}
+
+		div.left {
+			display: block;
+			float: left;
+			width: 68px;
+			height: 100%;
+
+			.id-img {
+				width: 100%;
+				height: 68px;
+				border-radius: 59%;
+				overflow: hidden;
+
+				img {
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+
+		div.right {
+			display: block;
+			float: left;
+			width: 225px;
+			margin-left: 20px;
+
+			.info {
+				.line1 {
+					width: 100%;
+					position: relative;
+
+					.btn-conmunite {
+						position: absolute;
+						right: 0px;
+						top: 0px;
+						color: $font-color2;
+						font-size: 12px;
+
+						.icon {
+							@include i-letter;
+							position: relative;
+							bottom: 1px;
+						}
+					}
+				}
+
+				.line2 {
+					width: 100%;
+					font-size: 12px;
+
+					p {
+						margin-bottom: 0px;
+					}
+				}
+
+				.line3 {
+					color: $font-color2;
+					font-size: 12px;
+					position: relative;
+					width: 100%;
+					margin-top: 5px;
+
+					.fans-amount {
+						position: absolute;
+						right: 0px;
+						top: 0px;
+					}
+				}
+
+
+			}
+
+			.btn-follow {
+				display: block;
+				width: 140px;
+				height: 24px;
+				border-radius: 5px;
+				background-color: $blue1;
+				text-align: center;
+				line-height: 24px;
+				color: white;
+				margin-top: 10px;
+
+				&:hover {
+					background-color: $blue2;
+				}
+			}
+		}
+	}
+}

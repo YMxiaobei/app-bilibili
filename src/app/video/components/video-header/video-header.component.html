@@ -1,0 +1,120 @@
+<div class="main">
+	<div class="left">
+		<h1 class="title">{{video.title}}</h1>
+		<div class="info">
+			<div class="content1">
+				<ul class="list-unstyled">
+					<li>
+						<div class="path">
+							<ul class="list-unstyled">
+								<li *ngFor="let path of video.paths">
+									<a href="javascript;;">{{path}}</a>
+									>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="time">
+						<div>
+							<p>{{video.update_time}}</p>
+						</div>
+					</li>
+					<li class="complaints">
+						<div>
+							<a href="javascript:;">稿件投诉</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="content2">
+				<ul class="list-unstyled">
+					<li class="static">
+						<div class="play-amount">
+							<span class="icon"></span>
+							<span class="amount">{{video.play_amount}}</span>
+						</div>
+					</li>
+					<li class="static">
+						<div class="reconmand-amount">
+							<span class="icon"></span>
+							<span class="amount">{{video.recomand_amount}}</span>
+						</div>
+					</li>
+					<li class="anim" (mouseover)="coin_anim_play=1" (mouseout)="coin_anim_play=2">
+						<div class="coin-amount">
+							<div class="icon">
+								<app-animate-icon
+									[width]="60"
+									[height]="60"
+									[src]="'/assets/img/anim-coin-small.png'"
+									[frames]="coin_frames"
+									[fps]="30"
+									[status]="coin_anim_play"
+								></app-animate-icon>
+							</div>
+							
+							<span class="amount">硬币 {{video.coin_amount}}</span>
+						</div>
+					</li>
+					<li class="anim" (mouseover)="star_anim_play=1" (mouseout)="star_anim_play=2">
+						<div class="star-amount">
+							<div class="icon">
+								<app-animate-icon
+									[width]="60"
+									[height]="60"
+									[src]="'/assets/img/anim-collect.png'"
+									[frames]="star_frames"
+									[fps]="30"
+									[status]="star_anim_play"
+								></app-animate-icon>
+							</div>
+							
+							<span class="amount">收藏 {{video.star_amount}}</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="right">
+		<div class="user">
+			<div class="left">
+				<div class="id-img">
+					<img [src]="user.id_img">
+				</div>
+			</div>
+			<div class="right">
+				<div class="info">
+					<div class="line1">
+						<div class="name">
+							<a href="javascript:;">{{user.name}}</a>
+						</div>
+						<a href="javascript:;" class="btn-conmunite">
+							<span class="icon"></span>
+							<span class="txt">私信</span>
+						</a>
+					</div>
+					<div class="line2">
+						<div class="Introduction">
+							<p>{{user.introduction}}</p>
+						</div>
+					</div>
+					<div class="line3">
+						<div class="contribute-amount"></div>
+							<span>投稿：</span>
+							<span>{{user.contribute_amount}}</span>
+						<div class="fans-amount">
+							<span> 粉丝：</span>
+							<span>{{user.fans_amount}}</span>
+						</div>
+					</div>
+				</div>
+				<a href="javascript:;" class="btn-follow">+ 关注</a>
+			</div>
+			
+		</div>
+		<div class="user2">
+			
+		</div>
+	</div>
+</div>

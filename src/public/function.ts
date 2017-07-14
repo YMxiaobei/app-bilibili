@@ -42,6 +42,12 @@ export function strToSecond ( str ) {
 	return Second;
 }
 
+export function anim ( fps: any, option: any ) {
+	for ( var i = 0, len = fps.length; i < len; i++ ) {
+
+	}
+}
+
 /*export function myAnimation ( source: any, target: any, fps: number, duration: number ) {
 	for ( var i in source ) {
 		if ( !target[ i ] ) {

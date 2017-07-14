@@ -13,6 +13,7 @@ import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { NavLinkComponent } from './components/nav-link/nav-link.component';
 import { HomeModule } from './home/home.module';
 import { AppRoutingModule } from './app-routing.module';
+import { VideoModule } from './video/video.module';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AppRoutingModule } from './app-routing.module';
     FormsModule,
     HttpModule,
     HomeModule,
-    AppRoutingModule
+    AppRoutingModule,
+    VideoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
