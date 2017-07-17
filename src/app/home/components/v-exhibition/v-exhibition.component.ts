@@ -3,7 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { VideoExhibition } from '../../classes/video-exhibition';
 
 
-let mockData: VideoExhibition = {
+let mockData: any = {
 	url: "javascript:;",
 	img_path: "/assets/img/a1.jpg",
 	title: "【凹凸世界手书/腐向】M/a/b/e/l【安雷】",
@@ -18,7 +18,7 @@ let mockData: VideoExhibition = {
 })
 export class VExhibitionComponent implements OnInit {
 
-  @Input () data: VideoExhibition = mockData;
+  @Input () data: any = mockData;
 
   active: boolean = false;
 

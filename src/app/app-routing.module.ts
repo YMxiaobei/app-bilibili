@@ -5,9 +5,9 @@ import { HomeComponent } from './home/home.component';
 import { VideoComponent } from './video/video.component';
 
 const appRoutes: Routes = [
-  { path: 'home', component: HomeComponent }, 
+  { path: 'video', component: HomeComponent }, 
   { path: 'video', component: VideoComponent },
-  { path: '', redirectTo: '/video', pathMatch: 'full' }
+  { path: '', redirectTo: '/home', pathMatch: 'full' }
 ]
 
 @NgModule({
