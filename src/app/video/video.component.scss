@@ -15,6 +15,8 @@
 	.video {
 		width: 100%;
 		background-color: #f6f9fa;
+		border-top: 1px solid $gray1;
+		margin-top: 20px;
 
 		.player-wrap {
 			width: $main_width;

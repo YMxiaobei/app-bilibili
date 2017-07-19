@@ -10,6 +10,18 @@ export function getOffsetTop( elements ){
 	return top;
 };
 
+export function  getScrollTop () {
+	var scrollTop = document.body.scrollTop==0?document.documentElement.scrollTop:document.body.scrollTop;
+
+	return scrollTop; 
+}
+
+export function getScrollLeft () {
+	var scrollLeft = document.body.scrollLeft==0?document.documentElement.scrollLeft:document.body.scrollLeft;
+
+	return scrollLeft;
+}
+
 export function getOffsetLeft( elements ){
 	var left = elements.offsetLeft;
 	var parent = elements.offsetParent;
@@ -21,10 +33,6 @@ export function getOffsetLeft( elements ){
 
 	return left;
 };
-
-export function test () {
-	alert ( "hey" )
-}
 
 export function strToSecond ( str ) {
 	var str_arr = str.split ( ":" );

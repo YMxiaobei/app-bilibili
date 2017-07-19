@@ -8,13 +8,11 @@ $left-header-height: 48px;
 
 .main {
 	width: 100%;
-
-	div {
-		display: inline-block;
-	}
+	position: relative;
 
 	.left {
 		width: $left-width;
+		display: inline-block;
 
 		.top-ad {
 			width: 100%;
@@ -25,12 +23,68 @@ $left-header-height: 48px;
 				width: $left-width - 20;
 				height: $left-header-height - 20;
 				margin: 10px;
+				position: relative;
+				display: inline-block;
+
+				.btn-pre, .btn-nest {
+					float: left;
+					height: 100%;
+					width: 16px;
+					background-color: #262626;
+					position: absolute;
+					top: 0px;
+				} 
 
 				.btn-pre {
-					float: left;
-					
-				} 
+					left: 0px;
+				}
+
+				.btn-nest {
+					right: 0px;
+				}
+
+				.ad-content {
+					height: 100%;
+					width: $left-width - 20 - 16 * 2 - 20;
+					margin: 0px auto;
+					background-color: #262626;
+					display: block;
+				}
 			}
 		}
+
+		.play-zone {
+			width: 100%;
+			height: 569px;
+			background-color: black;
+		}
+
+		.controllor {
+			width: 100%;
+			height: 30px;
+			border-top: 1px solid $gray1;
+			border-bottom: 1px solid $gray1;
+			background-color: white;
+			@include box-shadow(1px 1px 3px 1px rgba(0,0,0,0.2));
+			margin-top: 1px;
+		}
+
+		.danmu-editor {
+			width: 100%;
+			height: 38px;
+			background-color: white;
+			@include box-shadow(1px 1px 3px 1px rgba(0,0,0,0.2));
+		}
+	}
+
+	.right {
+		width: $main_width - $left-width -1;
+		height: 100%;
+		border-left: 1px solid $gray1;
+		background-color: white;
+		@include box-shadow(1px 1px 3px 1px rgba(0,0,0,0.2));
+		position: absolute;
+		right: 0px;
+		top: 0px;
 	}
 }

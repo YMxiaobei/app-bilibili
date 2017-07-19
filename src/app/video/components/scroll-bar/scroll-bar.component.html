@@ -1,0 +1,20 @@
+<div class="main" #main
+	[ngClass]="{
+		'H': dir==='H',
+		'V': dir==='V'
+	}"
+	[ngStyle]="{
+		'width.px': width,
+		'height.px': height
+	}"
+>
+	<div class="slide-guild" (click)="onclick ($event) " [ngStyle]="getGuildStyles()">
+		<div class="fill"
+			[ngStyle]="getFillStyles()"
+		></div>
+		<div class="slide"
+			[ngStyle]="getSlideStyles()"
+			(mousedown)="onmousedown ( $event )"
+		></div>
+	</div>				
+</div>
