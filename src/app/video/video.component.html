@@ -7,8 +7,13 @@
 	</div>
 	<div class="video">
 		<div class="player-wrap">
-			<app-video-player></app-video-player>
+			<app-video-player [video]="video"></app-video-player>
+		</div>
+		<div class="bottom-toolbar-wrap">
+			<app-bottom-toolbar [video]="video"></app-bottom-toolbar>
 		</div>
 	</div>
-	<div class="footer"></div>
+	<div class="footer-wrap">
+		<app-video-footer></app-video-footer>
+	</div>
 </div>

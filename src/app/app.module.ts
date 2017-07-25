@@ -24,7 +24,7 @@ import { VideoModule } from './video/video.module';
     HistoryDetailComponent,
     SerchComponent,
     MainNavComponent,
-    NavLinkComponent,
+    NavLinkComponent
   ],
   imports: [
     BrowserModule,

@@ -430,6 +430,70 @@
 	background-position: -343px -2009px;
 }
 
+@mixin i-weibo2 {
+	@include public;
+
+	width: 36px;
+	height: 36px;
+	background-position: -1359px -588px;
+}
+
+@mixin i-weibo2-hover {
+	@include public;
+
+	width: 36px;
+	height: 36px;
+	background-position: -1429px -588px;
+}
+
+@mixin i-tieba2 {
+	@include public;
+
+	width: 36px;
+	height: 36px;
+	background-position: -1359px -658px;
+}
+
+@mixin i-tieba2-hover {
+	@include public;
+
+	width: 36px;
+	height: 36px;
+	background-position: -1429px -658px;
+}
+
+@mixin i-qqkongjian2 {
+	@include public;
+
+	width: 36px;
+	height: 36px;
+	background-position: -1359px -728px;
+}
+
+@mixin i-qqkongjian2-hover {
+	@include public;
+
+	width: 36px;
+	height: 36px;
+	background-position: -1429px -728px;
+}
+
+@mixin i-qq2 {
+	@include public;
+
+	width: 36px;
+	height: 36px;
+	background-position: -1359px -798px;
+}
+
+@mixin i-qq2-hover {
+	@include public;
+
+	width: 36px;
+	height: 36px;
+	background-position: -1429px -798px;
+}
+
 @mixin i-slide {
 	display: inline-block;
 	background-repeat: no-repeat;
@@ -562,7 +626,7 @@
 	background-position: -202px -10px;
 }
 
-@mixin i-play {
+@mixin i-play2 {
 	display: inline-block;
 	background-repeat: no-repeat;
 	vertical-align: middle;
@@ -573,7 +637,7 @@
 	background-position: -29px -1434px;
 }
 
-@mixin i-play-hover {
+@mixin i-play2-hover {
 	display: inline-block;
 	background-repeat: no-repeat;
 	vertical-align: middle;
@@ -671,3 +735,257 @@
 	height: 13px;
 	background-position: -89px -537px;
 }
+
+@mixin i-forbid-top {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/forbid-danmu.png);
+
+	width: 48px;
+	height: 51px;
+	background-position: -18px -16px;
+}
+
+@mixin i-forbid-top-hover {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/forbid-danmu.png);
+
+	width: 48px;
+	height: 51px;
+	background-position: -18px -81px;
+}
+
+@mixin i-forbid-bottom {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/forbid-danmu.png);
+
+	width: 48px;
+	height: 51px;
+	background-position: -81px -16px;
+}
+
+@mixin i-forbid-bottom-hover {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/forbid-danmu.png);
+
+	width: 48px;
+	height: 51px;
+	background-position: -145px -81px;
+}
+
+@mixin i-forbid-scroll {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/forbid-danmu.png);
+
+	width: 48px;
+	height: 51px;
+	background-position: -145px -16px;
+}
+
+@mixin i-forbid-scroll-hover {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/forbid-danmu.png);
+
+	width: 48px;
+	height: 51px;
+	background-position: -81px -81px;
+}
+
+@mixin i-forbid-colorful {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/forbid-danmu2.png);
+
+	width: 48px;
+	height: 51px;
+	background-position: -18px -26px;
+}
+
+@mixin i-forbid-colorful-hover {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/forbid-danmu2.png);
+
+	width: 48px;
+	height: 51px;
+	background-position: -18px -87px;
+}
+
+@mixin i-forbid-common {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/forbid-danmu2.png);
+
+	width: 48px;
+	height: 51px;
+	background-position: -81px -26px;
+}
+
+@mixin i-forbid-common-hover {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/forbid-danmu2.png);
+
+	width: 48px;
+	height: 51px;
+	background-position: -81px -87px;
+}
+
+@mixin i-forbid-subtitles {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/forbid-danmu2.png);
+
+	width: 48px;
+	height: 51px;
+	background-position: -146px -26px;
+}
+
+@mixin i-forbid-subtitles-hover {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/forbid-danmu2.png);
+
+	width: 48px;
+	height: 51px;
+	background-position: -146px -87px;
+}
+
+@mixin i-forbid-special {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/forbid-danmu2.png);
+
+	width: 48px;
+	height: 51px;
+	background-position: -212px -26px;
+}
+
+@mixin i-forbid-special-hover {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/forbid-danmu2.png);
+
+	width: 48px;
+	height: 51px;
+	background-position: -212px -87px;
+}
+
+@mixin i-Dtype-scroll {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/danmu-mode.png);
+
+	width: 48px;
+	height: 49px;
+	background-position: -16px -27px;
+}
+
+@mixin i-Dtype-scroll-selected {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/danmu-mode.png);
+
+	width: 48px;
+	height: 49px;
+	background-position: -16px -89px;
+}
+
+@mixin i-Dtype-scroll-hover {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/danmu-mode.png);
+
+	width: 48px;
+	height: 49px;
+	background-position: -16px -153px;
+}
+
+@mixin i-Dtype-top {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/danmu-mode.png);
+
+	width: 48px;
+	height: 49px;
+	background-position: -92px -27px;
+}
+
+@mixin i-Dtype-top-selected {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/danmu-mode.png);
+
+	width: 48px;
+	height: 49px;
+	background-position: -92px -89px;
+}
+
+@mixin i-Dtype-top-hover {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/danmu-mode.png);
+
+	width: 48px;
+	height: 49px;
+	background-position: -92px -153px;
+}
+
+@mixin i-Dtype-bottom {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/danmu-mode.png);
+
+	width: 48px;
+	height: 49px;
+	background-position: -169px -27px;
+}
+
+@mixin i-Dtype-bottom-selected {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/danmu-mode.png);
+
+	width: 48px;
+	height: 49px;
+	background-position: -169px -89px;
+}
+
+@mixin i-Dtype-bottom-hover {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/danmu-mode.png);
+
+	width: 48px;
+	height: 49px;
+	background-position: -168px -153px;
+}
+

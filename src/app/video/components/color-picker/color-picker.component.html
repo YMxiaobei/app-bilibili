@@ -1,0 +1,32 @@
+<div class="main">
+	<div class="header">
+		<div class="selected-color"
+			[ngStyle]="{'background-color': '#' + selected}"
+		></div>
+		<div class="selected-color-code">
+			<input type="text" name="" [ngModel]="selected">
+		</div>
+	</div>
+	<div class="content" (mouseover)="colorChange ( $event )" (click)="onChange ()">
+		<div class="left">
+			<span class="color-cell" 
+				*ngFor="let color of colors_left"
+				[title]="color"
+				[ngStyle]="{'background-color': '#' + color}"
+			></span>
+		</div>
+		<div class="mid-line"></div>
+		<div class="right">
+			<div class="color-section" 
+				*ngFor="let colors of codes_right"
+				[title]="color"
+			>
+				<span class="color-cell" 
+					*ngFor="let color of colors"
+					[title]="color"
+					[ngStyle]="{'background-color': '#' + color}"
+				></span>
+			</div>
+		</div>
+	</div>
+</div>

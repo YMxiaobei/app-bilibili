@@ -12,18 +12,32 @@
 			<app-video-controllor
 				[height]="'100%'"
 				[width]="'100%'"
+				[video]="video"
 			></app-video-controllor>
 		</div>
-		<div class="danmu-editor"></div>
+		<div class="danmu-editor">
+			<app-danmu-editor></app-danmu-editor>
+		</div>
 	</div> 
 	<div class="right">
 		<div class="header">
-			
-		</div>
-		<div class="content">
-			<div class="nav">
-				<div class="danmu-list"></div>
+			<div class="audience-cournt">
+				<span>{{video.audience_amount}}</span>
+				人正在看, 894条弹幕
 			</div>
+			<a href="javascript:;" class="btn-function-setting">
+				<span class="icon glyphicon glyphicon-cog"></span>
+			</a>
+			<a href="javascript:;" class="btn-setting-menu">
+				<span class="icon glyphicon glyphicon-th-list"></span>
+			</a>
 		</div>
+		<div class="player-setting-wrap">
+			<app-player-setting [video]="video"></app-player-setting>
+		</div>
+		<div class="player-setting2-wrap">
+			<app-player-setting2></app-player-setting2>
+		</div>
+		
 	</div>
 </div>

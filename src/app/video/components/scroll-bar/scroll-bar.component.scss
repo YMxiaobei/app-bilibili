@@ -9,19 +9,20 @@
 		
 		border-radius: 3px;
 		box-sizing: content-box;
-		background-color: $blue2;
+		background-color: $blue3;
 		position: relative;
 
 		.fill {
 			background-color: $blue1;
 			border-radius: 3px;
+			width: 0%;
 		}
 
 		.slide {
 			width: 14px;
 			height: 14px;
 			border-radius: 50%;
-			border: 1px solid $blue1;
+			border: 1px solid $blue3;
 			background-color: white;
 			
 			position: relative;
@@ -32,7 +33,7 @@
 }
 
 .H {
-	height: 14px;
+	height: 6px;
 	left: 7px;
 
 	.slide-guild {
@@ -60,7 +61,6 @@
 		height: 100%;
 
 		.fill {
-			width: 100%;
 			position: absolute;
 			top: 0px;
 			left: 0px;

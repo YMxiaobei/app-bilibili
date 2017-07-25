@@ -1,0 +1,156 @@
+<div class="bottom-toolbar">
+	<div class="content">
+		<div class="share-option">
+			<div class="share-count">
+				<span class="label">分享</span>
+				<span class="count">
+					{{video.share_count}}
+				</span>
+			</div>
+			<div class="icon-drop-down">
+				<span class="glyphicon glyphicon-chevron-down"></span>
+			</div>
+			<ul class="list-unstyled share-platforms">
+				<li class="share-to-weibo">
+					<a href="javascript:;">
+						<span class="icon"></span>
+					</a>
+				</li>
+				<li class="share-to-qqkongjian">
+					<a href="javascript:;">
+						<span class="icon"></span>
+					</a>
+				</li>
+				<li class="share-to-qq">
+					<a href="javascript:;">
+						<span class="icon"></span>
+					</a>
+				</li>
+				<li class="share-to-baidutieba">
+					<a href="javascript:;">
+						<span class="icon"></span>
+					</a>
+				</li>
+			</ul>
+			<div class="copy-url hidden">
+				<div class="left">
+					<h1 class="title">将视频贴到博客或论坛</h1>
+					<ul class="list-unstyled">
+						<li>
+							<span class="label2">视频地址</span>
+							<div class="url">
+								<input type="text" name="">
+								<a href="javascript:;" class="btn-copy">复制</a>
+							</div>
+						</li>
+						<li>
+							<span class="label2">Flash地址</span>
+							<div class="url">
+								<input type="text" name="">
+								<a href="javascript:;" class="btn-copy">复制</a>
+							</div>
+						</li>
+						<li>
+							<span class="label2">HTML地址</span>
+							<div class="url">
+								<input type="text" name="">
+								<a href="javascript:;" class="btn-copy">复制</a>
+							</div>
+						</li>
+					</ul>
+					<div class="split-line"></div>
+				</div>
+				<div class="right"></div>
+			</div> 
+		</div>
+		<div class="others">
+			<ul class="list-unstyled">
+				<li class="star" (mouseover)="coin_anim_play=1" (mouseleave)="coin_anim_play=2">
+					<a href="javascript:;">
+						<div class="anim-icon">
+							<app-animate-icon
+								[width]="80"
+								[height]="80"
+								[src]="'/assets/img/anim-coin-big.png'"
+								[frames]="{distance:80, num:8, y:0}"
+								[fps]="10"
+								[status]="coin_anim_play"
+							></app-animate-icon>
+						</div>
+						<div class="txt">
+							<span class="label2">收藏</span><br>
+							<span>{{video.star_amount}}</span>
+						</div>
+					</a>
+				</li>
+				<li class="coin" (mouseover)="star_anim_play=1" (mouseleave)="star_anim_play=2">
+					<a href="javascript:;">
+						<div class="anim-icon">
+							<app-animate-icon
+								[width]="80"
+								[height]="80"
+								[src]="'/assets/img/anim-star-big.png'"
+								[frames]="{distance:80, num:14, y:0}"
+								[fps]="10"
+								[status]="star_anim_play"
+							></app-animate-icon>
+						</div>
+						<div class="txt">
+							<span class="label2">硬币</span><br>
+							<span>{{video.coin_amount}}</span>
+						</div>
+					</a>
+				</li>
+				<li class="mark" (mouseover)="mark_anim_play=1" (mouseleave)="mark_anim_play=2">
+					<a href="javascript:;">
+						<div class="anim-icon">
+							<app-animate-icon
+								[width]="80"
+								[height]="80"
+								[src]="'/assets/img/anim-watch-later.png'"
+								[frames]="{distance:80, num:13, y:0}"
+								[fps]="10"
+								[status]="mark_anim_play"
+							></app-animate-icon>
+						</div>
+						<div class="txt">
+							<span class="label2">稍后看</span><br>
+							<span>马克一下~</span>
+						</div>
+					</a>
+				</li>
+				<li class="watch-by-phone" (mouseover)="app_anim_play=1" (mouseleave)="app_anim_play=2">
+					<a href="javascript:;">
+						<div class="anim-icon">
+							<app-animate-icon
+								[width]="80"
+								[height]="80"
+								[src]="'/assets/img/anim-app.png'"
+								[frames]="{distance:80, num:16, y:0}"
+								[fps]="10"
+								[status]="app_anim_play"
+							></app-animate-icon>
+						</div>
+						<div class="txt">
+							<span class="label2">用手机看</span><br>
+							<span>离线看更方便</span>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<a href="javascript:;" class="btn-charge" (mouseover)="battery_anim_play=1" (mouseleave)="battery_anim_play=2">
+			<div class="anim-icon">
+				<app-animate-icon
+					[width]="80"
+					[height]="80"
+					[src]="'/assets/img/anim-battery.png'"
+					[frames]="{distance:80, num:5, y:0}"
+					[fps]="30"
+					[status]="battery_anim_play"
+				></app-animate-icon>
+			</div>
+			<span>为TA充电</span>
+		</a>
+	</div>
+</div>

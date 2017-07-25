@@ -1,0 +1,171 @@
+<div class="main">
+	<div class="nav">
+		<ul class="list-unstyled">
+			<li>
+				<a href="javascript:;" 
+					(click)="content_show='recommend-videos'" 
+					[ngClass]="{selected:content_show==='recommend-videos' }"
+				>
+					<span class="txt">推荐视频</span>
+					<span class="selected_mark"></span>
+				</a>
+			</li>
+			<li>
+				<a href="javascript:;" 
+					(click)="content_show='danmu-list'"
+					[ngClass]="{selected:content_show==='danmu-list' }"
+				>
+					<span class="txt">弹幕列表</span>
+					<span class="selected_mark"></span>
+				</a>
+			</li>
+			<li>
+				<a href="javascript:;" 
+					(click)="content_show='shield-setting'"
+					[ngClass]="{selected:content_show==='shield-setting' }"
+				>
+					<span class="txt">屏蔽设定</span>
+					<span class="selected_mark"></span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div class="content">
+		<div class="recommend-videos" *ngIf="content_show==='recommend-videos'">
+			<ul class="list-unstyled">
+				<li *ngFor="let recomend of video.recomends">
+					<div class="left">
+						<div class="poster">
+							<img [src]="recomend.imp_path">
+						</div>
+					</div>
+					<div class="right">
+						<h1 class="v-title" [title]="recomend.title">{{recomend.title | omitString:20}}</h1>
+						<div class="performance">
+							<span class="play-amount">{{recomend.play_amount | transformAmount}}</span>
+							<span class="commond-amount">{{recomend.commond_amount | transformAmount}}</span>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="danmu-list" *ngIf="content_show==='danmu-list'">
+			<div class="header">
+				<span class="t-apearence-time">时间</span>
+				<span class="t-content">弹幕内容</span>
+				<span class="t-update-time">发送时间</span>
+			</div>
+			<div class="danmu-list-content">
+				<ul class="list-unstyled">
+					<li *ngFor="let danmu of video.danmus">
+						<span class="apearence-time">{{danmu.apearance_time}}</span>
+						<span class="content" [title]="danmu.content">{{danmu.content | omitString:10}}</span>
+						<span class="update-time">{{danmu.update_time}}</span>
+						<div class="danmu-author-setting">
+							<a class="charge-this" href="javascript:;">举报</a>
+							<a class="ignore-this" href="javascript:;">屏蔽用户</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="footer">
+				<a href="javascript:;" class="btn-history-danmu">查看历史弹幕</a>
+			</div>
+		</div>	
+		<div class="ignore-setting" *ngIf="content_show==='shield-setting'">
+			<div class="ignore-list">
+				<div class="list-switch">
+					<label>
+						屏蔽列表
+					</label>
+					<a href="javascript:;" class="btn-list-switch">
+						<span></span>
+					</a>
+					<a href="javascript:;" class="btn-refresh-list">
+						<span class="icon glyphicon glyphicon-refresh"></span>
+						<span class="txt">同步屏蔽列表</span>
+					</a>
+				</div>
+				<div class="add-to-list">
+					<div class="select-type">
+						<select>
+							<option value="txt">文本</option>
+							<option value="Rex">正则</option>
+						</select>
+					</div>
+					<div class="input">
+						<input type="txt" name="" placeholder="请输入关键词">
+					</div>
+					<a href="javascript:;" class="btn-add">添加</a>
+				</div>
+				<div class="list-content">
+					<div class="list-nav">
+						<a href="javscript:;" class="ignored-word selected">屏蔽词</a>
+						<a href="javscript:;" class="ignored-user">屏蔽用户</a>
+					</div>
+					<div class="content ignored-word-content">
+						<div class="list-header">
+							<span class="t-type">类别</span>
+							<span class="t-content">内容</span>
+							<span class="t-status">状态</span>
+							<span class="t-operation">操作</span>
+							<span class="t-synchronous">同步</span>
+						</div>
+						<ul class="list-unstyled">
+							<li></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="split-line"></div>
+			<div class="ignore-type">
+				<h1 class="title">按类型屏蔽</h1>
+				<ul class="list-unstyled">
+					<li class="type-scroll">
+						<a href="javascript:;">
+							<span class="icon"></span>
+							<span class="txt">滚动弹幕</span>
+						</a>
+					</li>
+					<li class="type-top">
+						<a href="javascript:;">
+							<span class="icon"></span>
+							<span class="txt">顶端弹幕</span>
+						</a>
+					</li>
+					<li class="type-bottom">
+						<a href="javascript:;">
+							<span class="icon"></span>
+							<span class="txt">底端弹幕</span>
+						</a>
+					</li>
+					<li class="type-colorful">
+						<a href="javascript:;">
+							<span class="icon"></span>
+							<span class="txt">彩色弹幕</span>
+						</a>
+					</li>
+					<li class="type-common">
+						<a href="javascript:;">
+							<span class="icon"></span>
+							<span class="txt">普通弹幕</span>
+						</a>
+					</li>
+					<li class="type-subtitles">
+						<a href="javascript:;">
+							<span class="icon"></span>
+							<span class="txt">字幕弹幕</span>
+						</a>
+					</li>
+					<li class="type-special">
+						<a href="javascript:;">
+							<span class="icon"></span>
+							<span class="txt">特殊弹幕</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+

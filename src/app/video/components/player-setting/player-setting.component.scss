@@ -1,0 +1,573 @@
+@import "~compass-mixins/lib/compass";
+@import "src/assets/styles/icons-mixin.scss";
+@import "src/assets/styles/color.scss";
+@import "src/assets/styles/variable.scss";
+
+$height: 32px;
+$apearence-time-width: 47px;
+$content-width: 146px;
+$update-time-width: 68px;
+$content-height: 593px;
+
+.main {
+	width: 100%;
+	font-size: 12px;
+
+	.nav {
+		width: 100%;
+		height: $height;
+		border-bottom: 1px solid $gray1;
+
+		ul {
+			height: 100%;
+			font-size: 12px;
+			margin: 0px auto;
+			line-height: $height;
+			text-align: center;
+			margin-left: -26px;
+
+			li {
+				height: 100%;
+				width: 66px;
+				display: inline-block;
+				text-align: center;
+				vertical-align: top;
+				margin-left: 26px;
+
+				a {
+					color: $font-color1;
+					width: 100%;
+					height: 100%;
+					display: block;
+					position: relative;
+				}
+
+				a.selected {
+
+					color: $blue1;
+
+					.selected_mark {
+						width: 100%;
+						position: absolute;
+						height: 2px;
+						border-radius: 1px;
+						left: 0px;
+						bottom: 0px;
+						background-color: $blue1;
+						display: block;
+					}
+					
+				}
+
+			}
+		}
+	} 
+
+	.content {
+		width: 100%;
+
+		.danmu-list {
+			width: 100%;
+
+			.header {
+				width: 100%;
+				height: 30px;
+				text-align: left;
+				line-height: 30px;
+				font-size: 12px;
+				color: $font-color2;
+				margin-left: 20px;
+
+				.t-apearence-time {
+					height: 100%;
+					width: $apearence-time-width;
+					display: block;
+					float: left;
+				}
+
+				.t-content {
+					height: 100%;
+					width: $content-width;
+					display: block;
+					float: left;
+				}
+
+				.t-update-time {
+					height: 100%;
+					width: $update-time-width;
+					display: block;
+					float: left;
+				}
+			}
+
+			.danmu-list-content {
+				width: 100%;
+				height: 526px;
+				border-bottom: 1px solid $gray1;
+				overflow: auto;
+
+				ul {
+					width: $apearence-time-width + $content-width + $update-time-width;
+					color: $font-color2;
+					margin-left: 20px;
+					height: 526px;
+
+					li {
+						width: 100%;
+						height: 24px;
+						position: relative;
+
+						span {
+							height: 100%;
+							display: block;
+							float: left;
+						}
+
+						.apearence-time {
+							width: $apearence-time-width;		
+						}
+
+						.content {
+							width: $content-width; 
+						}
+
+						.update-time {
+							width: $update-time-width;
+						}
+
+						.danmu-author-setting {
+							height: 100%;
+							position: absolute;
+							top: -2px;
+							right: 0px;
+							background-color: white;
+							display: none;
+
+							a {
+								height: 100%;
+								border: 1px solid $blue1;
+								border-radius: 5px;
+								display: inline-block;
+								line-height: 24px;
+								color: $blue1;
+								padding: 0px 5px;
+
+								&:hover {
+									background-color: $blue1;
+									color: white;
+								}
+							}
+						}
+
+						&:hover {
+							.danmu-author-setting {
+								display: block;
+							}
+						}
+					}
+				}
+			}
+
+			.footer {
+				width: 100%;
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+
+				a {
+					color: $font-color2;
+				}
+			}
+		}
+
+		.recommend-videos {
+			width: 100%;
+			height: $content-height;
+			overflow: auto;
+
+			ul {
+				width: $apearence-time-width + $content-width + $update-time-width;
+				margin-left: 20px;
+
+				li {
+					width: 100%;
+					height: 63px;
+					margin-top: 10px;
+
+					.left {
+						height: 100%;
+						width: 99px;
+						float: left;
+						background-color: red;
+					}
+
+					.right {
+						width: $apearence-time-width + $content-width + $update-time-width - 10 - 99;
+						margin-left: 10px;
+						float: left;
+						height: 100%;
+
+						.v-title {
+							width: 100%;
+							color: $font-color1;
+							font-size: 12px;
+							margin-top: 0px;
+							margin-bottom: 0px;
+							line-height: 20px;
+						}
+
+						.performance {
+							width: 100%;
+							height: 24px;
+							line-height: 24px;
+
+							span {
+								color: $font-color1;
+								font-size: 12px;
+								display: inline-block;
+								height: 100%;
+
+								&:before {
+									content: "";
+									position: relative;
+									top: -1px;
+									margin-right: 5px;
+								}
+							}
+
+							span.play-amount {
+								width: 76px;
+
+								&:before {
+									@include i-play;	
+								}
+							}
+
+							span.commond-amount {
+								&:before {
+									@include i-comments;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.ignore-setting {
+			width: $apearence-time-width + $content-width + $update-time-width;
+			height: $content-height - 21;
+			margin-left: 20px;
+
+			.ignore-list {
+				width: 100%;
+				height: 248px;
+				margin-top: 21px;
+
+				.list-switch {
+					width: 100%;
+					height: 20px;
+					line-height: 20px;
+					position: relative;
+
+					label {	
+						font-color: $font-color1;
+						vertical-align: top;
+					}
+
+					.btn-list-switch {
+						width: 29px;
+						height: 100%;
+						border: 1px  solid $blue1;
+						border-radius: 10px;
+						position: relative;
+						display: inline-block;
+						vertical-align: top;
+						margin-left: 5px;
+
+						span {
+							width: 16px;
+							height: 16px;
+							display: block;
+							position: absolute;
+							border-radius: 50%;
+							top: 1px;
+							background-color: $blue1;
+						}
+					}
+
+					.btn-refresh-list {
+						color: $blue1;
+						position: absolute;
+						right: 0px;
+					}
+				}
+
+				.add-to-list {
+					width: 100%;
+					height: 33px;
+					margin-top: 13px;
+					line-height: 33px;
+
+					.select-type {
+						height: 100%;
+						width: 69px;
+						float: left;
+
+						select {
+							width: 69px;
+							height: 100%;
+							border-radius: 5px;
+						}
+					}
+
+					.input {
+						width: 110px;
+						height: 100%;
+						border-radius: 5px;
+						border: 1px solid $gray1;
+						overflow: hidden;
+						float: left;
+						margin-left: 10px;
+
+						input {
+							width: 100%;
+							height: 100%;
+							padding: 0px 10px;
+							border: 0px;
+						}
+					}
+
+					.btn-add {
+						width: 60px;
+						height: 100%;
+						background-color: $blue1;
+						display: block;
+						float: left;
+						border-radius: 5px;
+						color: white;
+						margin-left: 10px;
+						text-align: center;
+					}
+				}
+
+				.list-content {
+					width: 100%;
+					height: 168px;
+					margin-top: 17px;
+
+					.list-nav {
+						width: 100%;
+						height: 30px;
+						line-height: 30px;
+
+						a {
+							padding:0px 10px;
+							border-radius: 5px 5px 0px 0px;
+							border:  1px solid white;
+							border-bottom: 1px solid $gray1;
+							color: $font-color2;
+							display: block;
+							float: left;
+							position: relative;
+							bottom: 1px;
+						}
+
+						a.selected {
+							background-color: #f4f5f7;
+							border: 1px solid $gray1; 
+							border-bottom: 1px solid #f4f5f7;
+							color: $font-color1;
+						}
+					}
+
+					.content {
+						width: 100%;
+						height: 136px;
+						background-color: #f4f5f7;
+						border: 1px solid $gray1;
+
+						.list-header {
+							width: 230px;
+							margin: 0px auto;
+							margin-top: 10px;
+
+							span {
+								display: block;
+								text-align: left;
+								float: left;
+								color: $font-color2;
+							}
+
+							span.t-type {
+								width: 45px;
+							}
+
+							span.t-content {
+								width: 86px;
+							}
+
+							span.t-status {
+								width: 37px;
+							}
+
+							span.t-operation {
+								width: 37px;
+							}
+						}
+					}
+
+					.ignored-word-content {
+						border-radius: 0px 5px 5px 5px;
+					}
+
+					.ignored-user-content {
+						border-radius: 5px;
+					}
+				} 
+			} 
+
+			.split-line {
+				width: 299px;
+				height: 1px;
+				background-color: $gray1;
+				margin-left: -20px;
+				margin-top: 25px;
+			} 
+
+			.ignore-type {
+				width: 100%;
+				margin-top: 15px;
+
+				.title {
+					width: 100%;
+					font-size: 12px;
+					margin-top: 0px;
+					margin-bottom: 0px;
+				}
+
+				ul {
+					margin-left: -( $apearence-time-width + $content-width + $update-time-width - 50 * 4 ) / 3;
+
+					li {
+						width: 50px;
+						float: left;
+						display: block;
+						margin-left: ( $apearence-time-width + $content-width + $update-time-width - 50 * 4 ) / 3;
+						margin-top: 10px;
+
+						a {
+							width: 100%;
+							display: block;
+
+							.txt {
+								color: $font-color2;
+								margin-top: 5px;
+							}
+						}
+					}
+
+					li.type-scroll {
+						.icon {
+							@include i-forbid-scroll;
+						}
+
+						a {
+							&:hover {
+								.icon {
+									@include i-forbid-scroll-hover;
+								}
+							}
+						}
+					}
+
+					li.type-top {
+						.icon {
+							@include i-forbid-top;
+						}
+
+						a {
+							&:hover {
+								.icon {
+									@include i-forbid-top-hover;
+								}
+							}
+						}
+					}
+
+					li.type-bottom {
+						.icon {
+							@include i-forbid-bottom;
+						}
+
+						a {
+							&:hover {
+								.icon {
+									@include i-forbid-bottom-hover;
+								}
+							}
+						}
+					}
+
+					li.type-colorful {
+						.icon {
+							@include i-forbid-colorful;
+						}
+
+						a {
+							&:hover {
+								.icon {
+									@include i-forbid-colorful-hover;
+								}
+							}
+						}
+					}
+
+					li.type-common {
+						.icon {
+							@include i-forbid-common;
+						}
+
+						a {
+							&:hover {
+								.icon {
+									@include i-forbid-common-hover;
+								}
+							}
+						}
+
+						
+					}
+
+					li.type-subtitles {
+						.icon {
+							@include i-forbid-subtitles;
+						}
+
+						a {
+							&:hover {
+								.icon {
+									@include i-forbid-subtitles-hover;
+								}
+							}
+						}
+					}
+
+					li.type-special {
+						.icon {
+							@include i-forbid-special;
+						}
+
+						a {
+							&:hover {
+								.icon {
+									@include i-forbid-special-hover;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

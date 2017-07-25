@@ -17,11 +17,23 @@
 		background-color: #f6f9fa;
 		border-top: 1px solid $gray1;
 		margin-top: 20px;
+		padding-bottom: 20px;
 
-		.player-wrap {
+		.player-wrap, .bottom-toolbar-wrap {
 			width: $main_width;
 			margin: 20px auto 0px auto;
 		}
+
+		.bottom-toolbar-wrap {
+			margin: 20px auto 0px auto;
+			width: $main_width;
+		} 
+	}
+
+	.footer-wrap {
+		width: 100%;
+		border-top: 1px solid $gray1;
+		background-color: white;
 	}
 }
 

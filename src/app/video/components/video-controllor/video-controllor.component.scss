@@ -48,6 +48,13 @@
 		li.volume-controllor {
 			position: relative;
 
+			.volume-cournt {
+				position: absolute;
+				top: 0px;
+				width: 100%;
+				text-align: center;
+			}
+
 			.volume-scroll-bar {
 				width: 39px;
 				height: 102px;
@@ -63,6 +70,140 @@
 					margin: 30px auto 0px auto;
 					position: relative;
 					left: -4px;
+				}
+			}
+		}
+
+		li.src-change {
+			position: relative;
+
+			.src-select {
+				width: 80px;
+				border-radius: 5px 5px 0px 0px;
+				background-color: white;
+				border: 1px solid $gray1;
+				position: absolute;
+				bottom: 28px;
+				left: - 18px;
+
+				li {
+					width: 100%;
+					font-size: 12px;
+					color: $font-color1;
+					cursor: pointer;
+
+					&:hover {
+						background-color: $gray1;
+					} 
+				}
+
+				li.selected {
+					background-color: white;
+					color: $blue2;
+				}
+			}
+
+
+		}
+
+		li.danmu-switch {
+			position: relative;	
+
+			.danmu-controllor {
+				width: 210px;
+				height: 180px;
+				background-color: white;
+				border-radius: 5px 5px 0px 0px;
+				border: 1px solid $gray2;
+				position: absolute;
+				bottom: 29px;
+				left: -100px;
+				color: $font-color1;
+
+				label {
+					margin-bottom: 0px;
+				}
+
+				.content {
+					width: 170px;
+					display: inline-block;
+					text-align: left;
+					font-size: 12px;
+					margin-top: 20px;
+				}
+
+				.opacity {
+					width: 100%;
+					position: relative;
+
+					.opacity-show {
+						position: absolute;
+						top: -20px;
+						right: 0px;
+						color: $font-color2;
+					}
+
+					.scroll-bar-wrap {
+						display: inline-block;
+						width: 108px;
+						height: 5px;
+						vertical-align: middle;
+						position: relative;
+						bottom: 1px;
+					}
+				}
+
+				.fandang-danmu {
+					input {
+						position: relative;
+						top: 1px;
+						left: 6px;
+					}
+				}
+
+				.danmu-filter {
+					width: 100%;
+					text-align: center;
+					margin-top: 10px;
+
+					.filter-btn {
+						width: 48px;
+						display: inline-block;
+					}
+
+					.btn-forbid-top {
+
+
+						.icon {
+							@include i-forbid-top;
+
+							&:hover {
+								@include i-forbid-top-hover;
+							}
+						}
+					}
+
+					.btn-forbid-bottom {
+						margin-left: 8px;
+						.icon {
+							@include i-forbid-bottom;
+
+							&:hover {
+								@include i-forbid-bottom-hover;
+							}
+						}
+					}
+
+					.btn-forbid-scroll {
+						margin-left: 8px;
+						.icon {
+							@include i-forbid-scroll;
+
+							&:hover {
+								@include i-forbid-scroll-hover;
+							}
+						}
+					}
 				}
 			}
 		}

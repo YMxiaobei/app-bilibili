@@ -1,0 +1,23 @@
+<div class="video-footer">
+	<div class="left">
+		<div class="tags">
+			<ul class="list-unstyled">
+				<li  *ngFor="let tag of video.tags">
+					<a href="javascript:;">{{tag}}</a>
+				</li>
+				<li class="">
+					<a href="javascript:;" class="btn-add-new-tag"></a>
+				</li>
+			</ul>
+			<a href="javascript:;" class="btn-check-modify-record">查看标签修改记录</a>
+			<a href="javascript:;" class="btn-check-tag-instructions">查看标签使用说明</a>
+		</div>
+		<div class="video-introduction">
+			<p>{{video.introduction}}</p>
+		</div>
+		<div class="video-comments-wrap">
+			<app-video-comments></app-video-comments>
+		</div>
+	</div>
+	<div class="right"></div>
+</div>

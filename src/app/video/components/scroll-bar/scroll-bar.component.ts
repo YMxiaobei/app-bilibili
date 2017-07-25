@@ -1,5 +1,21 @@
-import { Component, OnInit, Input, AfterViewInit, ViewChild, ElementRef, AfterContentChecked, EventEmitter } from '@angular/core';
-import { getOffsetLeft, getOffsetTop, getScrollTop, getScrollLeft } from 'public/function';
+import { 
+  Component, 
+  OnInit, 
+  Input, 
+  AfterViewInit, 
+  ViewChild, 
+  ElementRef, 
+  AfterContentChecked, 
+  EventEmitter, 
+  Output 
+} from '@angular/core';
+
+import { 
+  getOffsetLeft, 
+  getOffsetTop, 
+  getScrollTop, 
+  getScrollLeft 
+} from 'public/function';
 
 @Component({
   selector: 'app-scroll-bar',
@@ -16,11 +32,13 @@ export class ScrollBarComponent implements OnInit, AfterContentChecked {
   @Input() guild_styles: any;
   @Input() fill_styles: any;
   @Input() reverse: boolean = false;
+  @Input() default_state: number;
+
+  @Output() change: EventEmitter<number> = new EventEmitter ();
 
   @ViewChild( 'main' ) el_main: ElementRef;
   
   slide_active: boolean = false;
-  change: EventEmitter<number> = new EventEmitter ();
   position_save: number;
 
   constructor() { }
@@ -105,7 +123,6 @@ export class ScrollBarComponent implements OnInit, AfterContentChecked {
 
   	this.state = this.reverse ? this.length - distance / step : distance / step ;
   	this.state = this.state < 0 ? 0 : this.state > this.length ? this.length : this.state;
-    console.log ( this.state );
   } ).bind ( this );
 
   onmousedown ( e ) {
@@ -142,6 +159,8 @@ export class ScrollBarComponent implements OnInit, AfterContentChecked {
   }
  
   ngOnInit() {
+    this.state = this.default_state;
+
   	window.addEventListener ( 'mouseup', ( function ( e ) {
       this.slide_active = false;
 

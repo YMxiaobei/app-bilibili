@@ -1,0 +1,163 @@
+<div class="main">
+	<div class="header">
+		<h1 class="title">播放器设置</h1>
+		<a href="javascript:;" class="btn-close">
+			<span class="glyphicon glyphicon-remove"></span>
+		</a>
+	</div>
+	<div class="split-line1"></div>
+	<div class="danmu-setting">
+		<h1 class="title">弹幕设置</h1>
+		<ul class="list-unstyled">
+			<li class="opacity-setting">
+				<label>弹幕不透明度</label>
+				<div class="scroll-bar-wrap">
+					<app-scroll-bar 
+						[width]="168"
+						[guild_styles]="{'background-color':'#e5e9ef'}"
+						[default_state]="50"
+					></app-scroll-bar>
+				</div>
+			</li>
+			<li class="speed-setting">
+				<label>弹幕速度</label>
+				<div class="scroll-bar-wrap">
+					<app-scroll-bar 
+						[width]="168"
+						[guild_styles]="{'background-color':'#e5e9ef'}"
+						[default_state]="50"
+					></app-scroll-bar>
+				</div>
+			</li>
+			<li class="density-setting">
+				<label>同屏弹幕密度</label>
+				<div class="scroll-bar-wrap">
+					<app-scroll-bar 
+						[width]="168"
+						[guild_styles]="{'background-color':'#e5e9ef'}"
+						[default_state]="50"
+					></app-scroll-bar>
+				</div>
+			</li>
+			<li class="font-zoom-setting">
+				<label>字号缩放</label>
+				<div class="scroll-bar-wrap">
+					<app-scroll-bar 
+						[width]="168"
+						[guild_styles]="{'background-color':'#e5e9ef'}"
+						[default_state]="50"
+					></app-scroll-bar>
+				</div>
+				<div class="checkbox-wrap">
+					<input type="checkbox" name="Uniform-Scale" id="checkbox1">
+					<label for="checkbox1">弹幕等比缩放</label>
+				</div>
+			</li>
+			<li class="border-style-setting">
+				<label>边框样式</label>
+				<ul class="list-unstyled style-list">
+					<li class="selected">
+						<a href="javascript:;">重墨</a>
+					</li>
+					<li>
+						<a href="javascript:;">描边</a>
+					</li>
+					<li>
+						<a href="javascript:;">45° 投影</a>
+					</li>
+				</ul>
+			</li>
+			<li class="font-style-setting">
+				<label>弹幕字体</label>
+				<div class="font-style-wrap">
+					<select class="font-family">
+						<option>黑体</option>
+						<option>宋体</option>
+						<option>新宋体</option>
+						<option>仿宋</option>
+						<option>微软雅黑</option>
+					</select>
+					<ul class="list-unstyled">
+						<li>
+							<input type="checkbox" name="" id="checkbox2">
+							<label for="checkbox2">应用到界面字体</label>
+						</li>
+						<li>
+							<input type="checkbox" name="" id="checkbox3">
+							<label for="checkbox3">粗体</label>
+						</li>
+						<li>
+							<input type="checkbox" name="" id="checkbox4">
+							<label for="checkbox3">防挡字幕</label>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class="render-type-setting">
+				<label>渲染类型</label>
+				<select>
+					<option>Canvas</option>
+					<option>css3</option>
+				</select>
+			</li>
+			<li class="play-speed-setting">
+				<label>播放速度</label>
+				<select>
+					<option>正常</option>
+					<option>0.5</option>
+					<option>0.75</option>
+					<option>1.25</option>
+					<option>1.5</option>
+				</select>
+			</li>
+		</ul>
+	</div>
+	<div class="split-line2"></div>
+	<div class="advance-setting">
+		<h1 class="title">高级选项</h1>
+		<div class="default-src-setting">
+			<label>默认画质</label>
+			<ul class="src-list list-unstyled">
+				<li class="selected">
+					<a href="javascript:;">自动</a>
+				</li>
+				<li>
+					<a href="javascript:;">超清</a>
+				</li>
+				<li>
+					<a href="javascript:;">高清</a>
+				</li>
+				<li>
+					<a href="javascript:;">流畅</a>
+				</li>
+			</ul>
+		</div>
+		<div class="orther-setting">
+			<ul class="list-unstyled">
+				<li>
+					<input type="checkbox" name="checkbox5">
+					<label for="checkbox5">云推荐弹幕</label>
+				</li>
+				<li>
+					<input type="checkbox" name="checkbox6">
+					<label for="checkbox6">自动换P</label>
+				</li>
+				<li>
+					<input type="checkbox" name="checkbox6">
+					<label for="checkbox6">镜像画面</label>
+				</li>
+				<li>
+					<input type="checkbox" name="checkbox6">
+					<label for="checkbox6">全屏发弹幕</label>
+				</li>
+				<li>
+					<input type="checkbox" name="checkbox6">
+					<label for="checkbox6">记忆宽屏</label>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="footer">
+		<a href="javascript:;" class="btn-default-setting">恢复默认设置</a>
+	</div>
+</div>

@@ -1,0 +1,57 @@
+<div class="main">
+	<ul class="list-unstyled">
+		<li class="danmu-mode">
+			<a href="javascript:;"></a>
+			<div class="mode-select hidden">
+				<div class="content">
+					<div class="font-size">
+						<label>字号</label>
+						<a href="javascript:;" (click)="size='small'" [ngClass]="{selected:size==='small'}"><span>小</span></a>
+						<a href="javascript:;" (click)="size='normal'" [ngClass]="{selected:size==='normal'}"><span>中</span></a>
+					</div>
+					<div class="danmu-appearance">
+						<label>模式</label>
+						<ul class="list-unstyled danmu-appearance-type" >
+							<li class="type-scroll">
+								<a href="javascript:;" (click)="type='scroll'" [ngClass]="{selected:type==='scroll'}">
+									<span class="icon"></span>
+									<span class="txt">滚动弹幕</span>
+								</a>
+							</li>
+							<li class="type-top">
+								<a href="javascript:;" (click)="type='top'" [ngClass]="{selected:type==='top'}">
+									<span class="icon"></span>
+									<span class="txt">顶端弹幕</span>
+								</a>
+							</li>
+							<li class="type-bottom">
+								<a href="javascript:;" (click)="type='bottom'" [ngClass]="{selected:type==='bottom'}">
+									<span class="icon"></span>
+									<span class="txt">底端弹幕</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+		</li>
+		<li class="danmu-color">
+			<a href="javascript:;"></a>
+			<div class="color-picker-wrap hidden">
+				<app-color-picker></app-color-picker>
+			</div>
+		</li>
+		<li class="danmu-input">
+			<input type="text" name="danmu" placeholder="你可以在这里输入弹幕吐槽哦！">
+		</li>
+		<li class="danmu-protocol">
+			<a href="javascript:;">弹幕礼仪 ></a>
+		</li>
+		<li class="danmu-send">
+			<a href="javascript:;">
+				<span>发送</span>
+			</a>
+		</li>
+	</ul>
+</div>

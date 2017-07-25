@@ -7,7 +7,295 @@ let mockVideo: any = {
   recomand_amount: 2000,
   coin_amount: 2000,
   star_amount: 2000,
-  title: "【手书/安雷】妄想感傷代償連盟"
+  title: "【手书/安雷】妄想感傷代償連盟",
+  audience_amount: 345,
+  share_count: 1000,
+  srcs: [
+    {
+      name: "超清",
+      src: ""
+    },
+    {
+      name: "高清",
+      src: ""
+    },
+    {
+      name: "标清",
+      src: ""
+    },
+    {
+      name: "流畅",
+      src: ""
+    }
+  ],
+  danmus: [
+    {
+      apearance_time: "00:20",
+      content: "开口跪",
+      update_time: "07-18 15:02",
+      author: "齐天大吊"
+    },
+    {
+      apearance_time: "02:20",
+      content: "超好听的",
+      update_time: "07-18 15:02",
+      author: "齐天大吊"
+    },
+    {
+      apearance_time: "02:20",
+      content: "抱起女神就跑",
+      update_time: "07-18 15:02",
+      author: "齐天大吊"
+    },
+    {
+      apearance_time: "02:20",
+      content: "开口跪",
+      update_time: "07-18 15:02",
+      author: "齐天大吊"
+    },
+    {
+      apearance_time: "02:20",
+      content: "66666",
+      update_time: "07-18 15:02",
+      author: "齐天大吊"
+    },
+    {
+      apearance_time: "02:20",
+      content: "没毛病",
+      update_time: "07-18 15:02",
+      author: "齐天大吊"
+    },
+    {
+      apearance_time: "02:20",
+      content: "声音太可爱啦！！！",
+      update_time: "07-18 15:02",
+      author: "齐天大吊"
+    },
+    {
+      apearance_time: "02:20",
+      content: "可爱，想日",
+      update_time: "07-18 15:02",
+      author: "齐天大吊"
+    },
+    {
+      apearance_time: "02:20",
+      content: "up你是个干大事的人",
+      update_time: "07-18 15:02",
+      author: "齐天大吊"
+    },
+    {
+      apearance_time: "02:20",
+      content: "开口跪！！！",
+      update_time: "07-18 15:02",
+      author: "齐天大吊"
+    },
+    {
+      apearance_time: "02:20",
+      content: "开口跪",
+      update_time: "07-18 15:02",
+      author: "齐天大吊"
+    },
+    {
+      apearance_time: "02:20",
+      content: "前方高能",
+      update_time: "07-18 15:02",
+      author: "齐天大吊"
+    },
+    {
+      apearance_time: "02:20",
+      content: "不好听，我也就循环了几百遍",
+      update_time: "07-18 15:02",
+      author: "齐天大吊"
+    },
+    {
+      apearance_time: "02:20",
+      content: "开口跪",
+      update_time: "07-18 15:02",
+      author: "齐天大吊"
+    },
+    {
+      apearance_time: "02:20",
+      content: "开口跪",
+      update_time: "07-18 15:02",
+      author: "齐天大吊"
+    },
+    {
+      apearance_time: "02:20",
+      content: "开口跪",
+      update_time: "07-18 15:02",
+      author: "齐天大吊"
+    },
+    {
+      apearance_time: "02:20",
+      content: "开口跪",
+      update_time: "07-18 15:02",
+      author: "齐天大吊"
+    },
+    {
+      apearance_time: "02:20",
+      content: "开口跪",
+      update_time: "07-18 15:02",
+      author: "齐天大吊"
+    },
+    {
+      apearance_time: "02:20",
+      content: "开口跪",
+      update_time: "07-18 15:02",
+      author: "齐天大吊"
+    },
+    {
+      apearance_time: "02:20",
+      content: "开口跪",
+      update_time: "07-18 15:02",
+      author: "齐天大吊"
+    },
+    {
+      apearance_time: "02:20",
+      content: "开口跪",
+      update_time: "07-18 15:02",
+      author: "齐天大吊"
+    },
+    {
+      apearance_time: "02:20",
+      content: "开口跪",
+      update_time: "07-18 15:02",
+      author: "齐天大吊"
+    },
+    {
+      apearance_time: "02:20",
+      content: "开口跪",
+      update_time: "07-18 15:02",
+      author: "齐天大吊"
+    },
+    {
+      apearance_time: "02:20",
+      content: "开口跪",
+      update_time: "07-18 15:02",
+      author: "齐天大吊"
+    },
+    {
+      apearance_time: "02:20",
+      content: "开口跪",
+      update_time: "07-18 15:02",
+      author: "齐天大吊"
+    },
+    {
+      apearance_time: "02:20",
+      content: "开口跪",
+      update_time: "07-18 15:02",
+      author: "齐天大吊"
+    }
+  ],
+  recomends: [
+    {
+      src: "",
+      title: "【熊叔实验室】如何在水面点火",
+      play_amount:  100000,
+      commond_amount: 100000
+    },
+    {
+      src: "",
+      title: "【熊叔实验室】如何在水面点火",
+      play_amount:  100000,
+      commond_amount: 100000
+    },
+    {
+      src: "",
+      title: "【熊叔实验室】如何在水面点火",
+      play_amount:  100000,
+      commond_amount: 100000
+    },
+    {
+      src: "",
+      title: "【熊叔实验室】如何在水面点火",
+      play_amount:  100000,
+      commond_amount: 100000
+    },
+    {
+      src: "",
+      title: "【熊叔实验室】如何在水面点火",
+      play_amount:  100000,
+      commond_amount: 100000
+    },
+    {
+      src: "",
+      title: "【熊叔实验室】如何在水面点火",
+      play_amount:  100000,
+      commond_amount: 100000
+    },
+    {
+      src: "",
+      title: "【熊叔实验室】如何在水面点火",
+      play_amount:  100000,
+      commond_amount: 100000
+    },
+    {
+      src: "",
+      title: "【熊叔实验室】如何在水面点火",
+      play_amount:  100000,
+      commond_amount: 100000
+    },
+    {
+      src: "",
+      title: "【熊叔实验室】如何在水面点火",
+      play_amount:  100000,
+      commond_amount: 100000
+    },
+    {
+      src: "",
+      title: "【熊叔实验室】如何在水面点火",
+      play_amount:  100000,
+      commond_amount: 100000
+    },
+    {
+      src: "",
+      title: "【熊叔实验室】如何在水面点火",
+      play_amount:  100000,
+      commond_amount: 100000
+    },
+    {
+      src: "",
+      title: "【熊叔实验室】如何在水面点火",
+      play_amount:  100000,
+      commond_amount: 100000
+    },
+    {
+      src: "",
+      title: "【熊叔实验室】如何在水面点火",
+      play_amount:  100000,
+      commond_amount: 100000
+    },
+    {
+      src: "",
+      title: "【熊叔实验室】如何在水面点火",
+      play_amount:  100000,
+      commond_amount: 100000
+    },
+    {
+      src: "",
+      title: "【熊叔实验室】如何在水面点火",
+      play_amount:  100000,
+      commond_amount: 100000
+    },
+    {
+      src: "",
+      title: "【熊叔实验室】如何在水面点火",
+      play_amount:  100000,
+      commond_amount: 100000
+    },
+    {
+      src: "",
+      title: "【熊叔实验室】如何在水面点火",
+      play_amount:  100000,
+      commond_amount: 100000
+    },
+    {
+      src: "",
+      title: "【熊叔实验室】如何在水面点火",
+      play_amount:  100000,
+      commond_amount: 100000
+    }
+  ]
 }
 
 let mockUser: any = {

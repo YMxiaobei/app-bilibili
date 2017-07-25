@@ -1,0 +1,279 @@
+@import "~compass-mixins/lib/compass";
+@import "src/assets/styles/icons-mixin.scss";
+@import "src/assets/styles/color.scss";
+@import "src/assets/styles/variable.scss";
+
+$height: 83px;
+
+.bottom-toolbar {
+	width: $main_width;
+	height: $height;
+	font-size: 12px;
+	border-radius: 5px;
+	
+	border: 1px solid $gray1;
+	background-color: white;
+
+	.content {
+		height: 100%;
+		width: $main_width - 40;
+		margin: 0px auto;
+		position: relative;
+
+		.share-option {
+			height: 100%;
+			width: 250px;
+			display: inline-block;
+			vertical-align: top;
+			position: relative;
+
+			.share-count {
+				height: 100%;
+				display: inline-block;
+				width: 38px;
+
+				.label {
+					font-size: 18px;
+					color: black;
+					margin-top: ( $height - 36 ) / 2 + 5;
+					padding: 0px;
+					display: inline-block;
+				}
+
+				.count {
+					width: 100%;
+					color: $font-color2;
+				}
+			}
+
+			.icon-drop-down {
+				height: 100%;
+				display: inline-block;
+			}
+
+			.share-platforms {
+				height: 100%;
+				display: inline-block;
+				vertical-align: top;
+
+				li {
+					display: inline-block;
+					margin-top: ( $height - 36 ) / 2;
+					vertical-align: top;
+					margin-left: 5px; 
+				}
+
+				li.share-to-weibo {
+					.icon {
+						@include i-weibo2;
+					}
+
+					a {
+						&:hover {
+							.icon {
+								@include i-weibo2-hover;
+							}
+						}
+					}
+				}
+
+				li.share-to-qqkongjian {
+					.icon {
+						@include i-qqkongjian2;
+					}
+
+					a {
+						&:hover {
+							.icon {
+								@include i-qqkongjian2-hover;
+							}
+						}
+					}
+				}
+
+				li.share-to-qq {
+					.icon {
+						@include i-qq2;
+					}
+
+					a {
+						&:hover {
+							.icon {
+								@include i-qq2-hover;
+							}
+						}
+					}
+				}
+
+				li.share-to-baidutieba {
+					.icon {
+						@include i-tieba2;
+					}
+
+					a {
+						&:hover {
+							.icon {
+								@include i-tieba2-hover;
+							}
+						}
+					}
+				}
+			}
+
+			.copy-url {
+				width: 642px;
+				height: 237px;
+				position: absolute;
+				top: $height;
+				left: -20px;
+				background-color: white;
+				@include box-shadow(0px 0px 3px 0px rgba(0,0,0,0.16));
+
+				.left {
+					width: 416px;
+					height: 178px;
+					position: relative;
+
+					.split-line {
+						width: 1px;
+						height: 100%;
+						background-color: $gray1;
+						top: 0px;
+						right: 0px;
+						position: absolute;
+					}
+
+					.title {
+						font-size: 18px;
+						width: 355px;
+						margin: 26px auto 0px auto;
+					}
+
+					ul {
+						width: 355px;
+						margin: 0px auto;
+
+						li {
+							width: 100%;
+							height: 20px;
+							line-height: 20px;
+							margin-top: 17px;
+
+							.label2 {
+								color: $font-color2;
+							}
+
+							.url {
+								float: right;
+								height: 100%;
+								width: 280px;
+								border: 1px solid $gray1;
+								position: relative;
+
+								input {
+									height: 100%;
+									width: 240px;
+									padding: 0px 10px;
+									border: 0px;
+									position: absolute;
+									left: 0px;
+									top: 0px;
+								}
+
+								.btn-copy {
+									height: 100%;
+									border: 1px solid $blue1;
+									width: 40px;
+									position: absolute;
+									top: -1px;
+									color: white;
+									display: block;
+									right: 0px;
+									box-sizing: content-box;
+									background-color: $blue1;
+									text-align: center;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.others {
+			height: 100%;
+			display: inline-block;
+			vertical-align: top;
+			overflow: hidden;
+
+			ul {
+				height: 100%;
+
+				li {
+					display: inline-block;
+					margin-top: 19px;
+					vertical-align: top;
+					background-color: transparent;
+					margin-left: 20px;
+
+					a  {
+						display: inline-block;
+
+						.anim-icon, .txt {
+							display: inline-block;
+							vertical-align: top;
+						}
+
+						.anim-icon {
+							margin-top: -11px;
+						}
+
+						.txt {
+							color: $font-color2;	
+							margin-top: 10px;
+							margin-left: -10px;
+
+							.label2 {
+								color: black;
+								font-size: 16px;
+							}
+						}
+					}
+				}
+
+				li.star {
+					a {
+						.anim-icon {
+							margin-top: -30px;
+						}
+					}
+				}
+			}
+		}
+
+		.btn-charge {
+			width: 146px;
+			height: 40px;
+			border-radius: 20px;
+			border: 1px solid #f9afb0;
+			display: inline-block;
+			vertical-align: top;
+			top: ( $height - 40 ) / 2;
+			position: absolute;
+			text-align: center;
+			line-height: 40px;
+			font-size: 18px;
+			color: #f37071;
+			font-weight: bold;
+			right: 0px;
+
+			.anim-icon {
+				position: absolute;
+				width: 80px;
+				height: 80px;
+				top: -20px;
+				left: -40px;
+			}
+		}
+	}
+}

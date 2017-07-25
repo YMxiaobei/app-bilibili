@@ -33,23 +33,81 @@
 			<a href="javascript:;">
 				<span class="glyphicon glyphicon-volume-up"></span>
 			</a>
-			<div class="volume-scroll-bar">
+			<div class="volume-scroll-bar hidden">
+				<div class="volume-cournt">
+					<span>{{current_volume}}</span>
+				</div>
 				<div class="scroll-bar-wrap">
 					<app-scroll-bar
 						[dir]="'V'"
 						[height]="70"
 						[reverse]="true"
+						[default_state]="default_volume"
 						[fill_styles]="{'background-color': 'gray'}"
+						(change)="volumeChange($event)"
 					></app-scroll-bar>
 				</div>
 			</div>
 		</li>
 		<li class="src-change c-btn" #src_change>
+			<div class="src-select hidden">
+				<ul class="list-unstyled">
+					<li *ngFor="let src of video.srcs" [ngClass]="{selected: src.name===current_src}">
+						<span>{{src.name}}</span>
+					</li>
+				</ul>
+			</div>
 			<a href="javascript:;">
 				<span>超清</span>
 			</a>
 		</li>
 		<li class="danmu-switch c-btn">
+			<div class="danmu-controllor hidden">
+				<div class="content">
+					<div class="opacity">
+						<span class="opacity-show">{{danmu_opacity}}%</span>
+						<label>
+							不透明度
+							<div class="scroll-bar-wrap">
+								<app-scroll-bar
+									dir="H"
+									[width]="108"
+									[guild_styles]="{
+										'height': '5px'
+									}"
+									[slide_styles]="{
+										'margin-top': '-2px'
+									}"
+									[default_state]="100"
+									(change)="danmuOpacityChange($event)"
+								></app-scroll-bar>
+							</div>
+						</label>
+						
+					</div>
+					<div class="fandang-danmu">
+						<label>
+							防挡弹幕
+							<input type="checkbox" name="">
+						</label>
+					</div>
+					<div class="danmu-filter">
+						<a href="javascript:;" class="btn-forbid-top filter-btn">
+							<span class="icon"></span>
+							<span class="txt">底端弹幕</span>
+						</a>
+						<a href="javascript:;" class="btn-forbid-bottom filter-btn">
+							<span class="icon"></span>
+							<span class="txt">顶端弹幕</span>
+						</a>
+						<a href="javascript:;" class="btn-forbid-scroll filter-btn">
+							<span class="icon"></span>
+							<span class="txt">滚动弹幕</span>
+						</a>
+					</div>
+				</div>
+				
+			</div>
 			<a href="javascript:;">
 				<span class="glyphicon glyphicon-comment"></span>
 			</a>
