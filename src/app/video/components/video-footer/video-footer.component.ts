@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-video-footer',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./video-footer.component.scss']
 })
 export class VideoFooterComponent implements OnInit {
+
+  @Input() video: any = {};	
 
   constructor() { }
 

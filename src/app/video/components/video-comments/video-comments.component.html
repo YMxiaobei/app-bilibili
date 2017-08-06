@@ -3,12 +3,41 @@
 		<span class="comments-count">
 			{{comment_amount}} 评论
 		</span>
-		<a href="javascript:;" class="btn-check-delete-log"></a>
+		<a href="javascript:;" class="btn-check-delete-log">查看评论删除记录</a>
 	</div>
 	<div class="content">
 		<div class="nav">
-			<a href="javascript:;" class="show-all-comments"></a>
-			<a href="javascript:;" class="orther-by-heat"></a>
+			<a href="javascript:;" class="show-all-comments selected">
+				<span>全部评论</span>
+				<div class="bottom-mark">
+					<span></span>
+				</div>
+			</a>
+			<a href="javascript:;" class="orther-by-heat">
+				<span>按热度排列</span>
+				<div class="bottom-mark">
+					<span></span>
+				</div>
+			</a>
+			<div class="pagination-controllor-wrap">
+				<app-pagination-controllor
+					[pagination_amount]="17"
+					[show_pagination_len]="6"
+					[current_pagination]="1"
+				></app-pagination-controllor>
+			</div>
+		</div>
+		<div class="sent-my-comment-wrap">
+			<app-sent-my-comment></app-sent-my-comment>
+		</div>
+		<div class="comment-list">
+			<ul class="list-unstyled">
+				<li *ngFor="let comment of comments">
+					<app-video-comment 
+						[comment]="comment"
+					></app-video-comment>
+				</li>
+			</ul>
 		</div>
 	</div>
 </div>

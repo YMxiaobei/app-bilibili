@@ -25,7 +25,7 @@ import {
 export class ScrollBarComponent implements OnInit, AfterContentChecked {
   @Input() width: number; 
   @Input() height: number;
-  @Input() length: number = 100;
+  @Input() len: number = 100;
   @Input() dir: string = "H";
   @Input() state: number = 0;
   @Input() slide_styles: any;
@@ -47,7 +47,7 @@ export class ScrollBarComponent implements OnInit, AfterContentChecked {
   	if ( ( this.dir === "H" && style_name === "height" ) || ( this.dir === "V" && style_name === "width" ) )
   	return "100%"	
   	else 
-  	return this.reverse ? 100 - ( this.state  / this.length ) * 100 + "%" : ( this.state  / this.length ) * 100 + "%";
+  	return this.reverse ? 100 - ( this.state  / this.len ) * 100 + "%" : ( this.state  / this.len ) * 100 + "%";
   }
 
   setState ( new_state ) {
@@ -112,17 +112,17 @@ export class ScrollBarComponent implements OnInit, AfterContentChecked {
 
     if ( this.dir === "H" ) {
       var distance = e.clientX - this.position_save;
-      var step = this.width / this.length;
+      var step = this.width / this.len;
     }
     else if ( this.dir === "V" ) {
       var distance = e.clientY - this.position_save;
-      var step = this.height / this.length; 
+      var step = this.height / this.len; 
     }
 
 
 
-  	this.state = this.reverse ? this.length - distance / step : distance / step ;
-  	this.state = this.state < 0 ? 0 : this.state > this.length ? this.length : this.state;
+  	this.state = this.reverse ? this.len - distance / step : distance / step ;
+  	this.state = this.state < 0 ? 0 : this.state > this.len ? this.len : this.state;
   } ).bind ( this );
 
   onmousedown ( e ) {
@@ -147,15 +147,16 @@ export class ScrollBarComponent implements OnInit, AfterContentChecked {
 
     if ( this.dir === "H" ) {
       var distance = e.clientX - this.position_save;
-      var step = this.width / this.length;
+      var step = this.width / this.len;
     }
     else if ( this.dir === "V" ) {
       var distance = e.clientY - this.position_save;
-      var step = this.height / this.length; 
+      var step = this.height / this.len; 
     }
   	
-  	this.state = this.reverse ? this.length - distance / step : distance / step ;
-	  this.state = this.state < 0 ? 0 : this.state > this.length ? this.length : this.state;
+  	this.state = this.reverse ? this.len - distance / step : distance / step ;
+	  this.state = this.state < 0 ? 0 : this.state > this.len ? this.len : this.state;
+    this.change.emit ( this.state );
   }
  
   ngOnInit() {

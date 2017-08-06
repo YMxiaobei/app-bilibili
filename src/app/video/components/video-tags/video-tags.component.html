@@ -1,0 +1,25 @@
+<div class="video-tags">
+	<div class="line1">
+		<ul class="list-unstyled">
+			<li  *ngFor="let tag of tags">
+				<a href="javascript:;">{{tag}}</a>
+			</li>
+		</ul>
+		<div class="input-new-tag">
+			<input type="text" name="" *ngIf="add_tag">
+			<a href="javascript:;" class="btn-add-new-tag">
+				<span  class="icon glyphicon glyphicon-plus" 
+					[ngClass]="{
+						'glyphicon-plus':!add_tag,
+						'glyphicon-remove':add_tag
+					}"
+				></span>
+			</a>
+		</div>
+	</div>
+	<div class="line2">
+		<a href="javascript:;" class="btn-check-modify-record">查看标签修改记录</a>
+		<span class="split-line"></span>
+		<a href="javascript:;" class="btn-check-tag-instructions">查看标签使用说明</a>
+	</div>
+</div>

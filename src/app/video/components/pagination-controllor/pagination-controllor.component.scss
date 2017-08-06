@@ -1,0 +1,33 @@
+@import "~compass-mixins/lib/compass";
+@import "src/assets/styles/icons-mixin.scss";
+@import "src/assets/styles/color.scss";
+@import "src/assets/styles/variable.scss";
+
+.pagination-controllor {
+	height: 34px;
+	line-height: 34px;
+	color: $font-color1;
+	font-weight: bold;
+
+	a {
+		color: $font-color1;
+	}
+
+	.btn-pre-page, .btn-nest-page {
+		margin-left: 10px;
+	}
+
+	ul {
+		display: inline;
+		li {
+			display: inline;
+			margin-left: 10px;
+		}
+
+		li.selected {
+			a {
+				color: $blue1;
+			}
+		}
+	}
+}

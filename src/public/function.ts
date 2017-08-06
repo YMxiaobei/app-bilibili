@@ -34,6 +34,8 @@ export function getOffsetLeft( elements ){
 	return left;
 };
 
+
+
 export function strToSecond ( str ) {
 	var str_arr = str.split ( ":" );
 
@@ -56,6 +58,97 @@ export function anim ( fps: any, option: any ) {
 	}
 }
 
+export function launchFullscreen(element) {
+//此方法不可以在異步任務中執行，否則火狐無法全屏
+	if ( element.requestFullscreen ) {
+		element.requestFullscreen ();
+	} 
+	else if ( element.mozRequestFullScreen ) {
+		element.mozRequestFullScreen ();
+	} 
+	else if ( element.msRequestFullscreen ) {  
+		element.msRequestFullscreen();  
+	} 
+	else if ( element.oRequestFullscreen ) {
+		element.oRequestFullscreen();
+	}
+	else if ( element.webkitRequestFullscreen ) {
+		element.webkitRequestFullScreen();
+	}
+	else {
+		var docHtml  = document.documentElement;
+		var docBody  = document.body;
+		var cssText = 'width:100%;height:100%;overflow:hidden;';
+		docHtml.style.cssText = cssText;
+		docBody.style.cssText = cssText;
+		element.style.cssText = cssText+';'+'margin:0px;padding:0px;';
+		document['IsFullScreen'] = true; 
+	}
+}
+
+export function exitFullscreen ( element ){
+	if ( document['exitFullscreen'] ) {
+		document['exitFullscreen'] ();
+	} 
+	else if ( document['msExitFullscreen'] ) {
+		document[ 'msExitFullscreen' ] ();
+	} 
+	else if ( document[ 'mozCancelFullScreen' ] ) {
+		document[ 'mozCancelFullScreen' ] ();
+	} 
+	else if ( document[ 'oRequestFullscreen' ] ) {
+		document['oCancelFullScreen'];
+	}
+	else if ( document[ 'webkitExitFullscreen' ] ) {
+		document['webkitExitFullscreen'];
+	}
+	else {
+		if ( !element ) {
+			return false;
+		}
+		var docHtml  = document.documentElement;
+		var docBody  = document.body;
+		var videobox  = document.getElementById('videobox');
+		docHtml.style.cssText = "";
+		docBody.style.cssText = "";
+		element.style.cssText = "";
+		document['IsFullScreen'] = false;
+	}
+}
+
+export function isFullscreen () {
+	if (
+		document[ 'fullscreenElement' ] || 
+		document[ 'webkitFullscreenElement' ] || 
+		document[ 'mozFullScreenElement' ] || 
+		document[ 'msFullscreenElement' ] ||
+		document[ 'IsFullScreen' ]
+	) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+export function setFullscreenChangeListener ( fun: any ) {
+	if ( document[ 'onfullscreenchange' ] !== undefined ) {
+		document[ 'onfullscreenchange' ] = fun;
+		console.log ( 'a' );
+	}
+	else if ( document[ 'onwebkitfullscreenchange' ] !== undefined ) {
+		document[ 'onwebkitfullscreenchange' ] = fun;
+		console.log ( 'b' );
+	}
+	else if ( document[ 'onmozfullscreenchange' ] !== undefined ) {
+		document[ 'onmozfullscreenchange' ] = fun;
+		console.log ( 'c' );
+	}
+	else if ( document[ 'MSFullscreenChange' ] !== undefined ) {
+		document[ 'MSFullscreenChange' ] = fun;
+		console.log ( 'd' );
+	}
+}
 /*export function myAnimation ( source: any, target: any, fps: number, duration: number ) {
 	for ( var i in source ) {
 		if ( !target[ i ] ) {

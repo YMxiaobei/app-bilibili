@@ -139,3 +139,53 @@
 .hidden {
 	display: none;
 }
+
+.rank {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons4.png);
+
+	width: 19px;
+	height: 9px;
+}
+
+.LV1 {
+	background-position: -23px -92px;
+}
+
+.LV2 {
+	background-position: -23px -156px;
+}
+
+.LV3 {
+	background-position: -23px -120px;
+}
+
+.LV4 {
+	background-position: -23px -184px;
+}
+
+.LV5 {
+	background-position: -23px -248px;
+}
+
+.LV6 {
+	background-position: -23px -312px;
+}
+
+.LV7 {
+	background-position: -23px -376px;
+}
+
+.LV8 {
+	background-position: -23px -440px;
+}
+
+.LV9 {
+	background-position: -23px -504px;
+}
+
+a {
+	text-decoration: none;
+}

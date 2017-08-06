@@ -989,3 +989,200 @@
 	background-position: -168px -153px;
 }
 
+@mixin i-smile-face {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons4.png);
+
+	width: 16px;
+	height: 16px;
+	background-position: -408px -24px;
+}
+
+@mixin i-smile-face-hover {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons4.png);
+
+	width: 16px;
+	height: 16px;
+	background-position: -472px -24px;
+}
+
+@mixin i-LV0 {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons4.png);
+
+	width: 19px;
+	height: 9px;
+	background-position: -23px -28px;
+}
+
+@mixin i-LV1 {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons4.png);
+
+	width: 19px;
+	height: 9px;
+	background-position: -23px -92px;
+}
+
+@mixin i-LV2 {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons4.png);
+
+	width: 19px;
+	height: 9px;
+	background-position: -23px -156px;
+}
+
+@mixin i-LV3 {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons4.png);
+
+	width: 19px;
+	height: 9px;
+	background-position: -23px -120px;
+}
+
+@mixin i-LV4 {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons4.png);
+
+	width: 19px;
+	height: 9px;
+	background-position: -23px -184px;
+}
+
+@mixin i-LV5 {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons4.png);
+
+	width: 19px;
+	height: 9px;
+	background-position: -23px -248px;
+}
+
+@mixin i-LV6 {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons4.png);
+
+	width: 19px;
+	height: 9px;
+	background-position: -23px -312px;
+}
+
+@mixin i-LV7 {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons4.png);
+
+	width: 19px;
+	height: 9px;
+	background-position: -23px -376px;
+}
+
+@mixin i-LV8 {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons4.png);
+
+	width: 19px;
+	height: 9px;
+	background-position: -23px -440px;
+}
+
+@mixin i-LV9 {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons4.png);
+
+	width: 19px;
+	height: 9px;
+	background-position: -23px -504px;
+}
+
+@mixin i-thumb-up {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons4.png);
+
+	width: 14px;
+	height: 14px;
+	background-position: -153px -24px;
+}
+
+@mixin i-thumb-up-hover {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons4.png);
+
+	width: 14px;
+	height: 14px;
+	background-position: -218px -24px;
+}
+
+@mixin i-thumb-up-selected {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons4.png);
+
+	width: 14px;
+	height: 14px;
+	background-position: -218px -24px;
+}
+
+@mixin i-thumb-down {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons4.png);
+
+	width: 14px;
+	height: 14px;
+	background-position: -153px -154px;
+}
+
+@mixin i-thumb-down-hover {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons4.png);
+
+	width: 14px;
+	height: 14px;
+	background-position: -217px -154px;
+}
+
+@mixin i-thumb-up-selected {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons4.png);
+
+	width: 14px;
+	height: 14px;
+	background-position: -218px -218px;
+}

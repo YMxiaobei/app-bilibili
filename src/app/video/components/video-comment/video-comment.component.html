@@ -1,0 +1,59 @@
+<div class="video-comment">
+	<div class="author-img">
+		<div  class="img-wrap">
+			<img [src]="comment.author.imp_path" width="100%" height="100%">
+		</div>
+	</div>
+	<div class="comment">
+		<div class="author-name">
+			<span class="name">{{comment.author.name}}</span>
+			<span class="rank" [ngClass]="comment.author.rank"></span>
+		</div>
+		<div class="content">
+			<p>{{comment.content}}</p>
+		</div>
+		<div class="comment-info">
+			<span class="floor-no">{{comment.floor}}</span>
+			<span class="update-time">{{comment.update_time}}</span>
+			<a href="javascript:;" class="btn-thumb-up">
+				<span class="icon"></span>
+				<span class="count" *ngIf="comment.thumb_up_amount">{{comment.thumb_up_amount}}</span>
+			</a>
+			<a href="javascript:;" class="btn-thumb-down">
+				<span class="icon"></span>
+				<span class="count" *ngIf="comment.thumb_down_amount">{{comment.thumb_down_amount}}</span>
+			</a>
+			<a href="javascript:;" class="btn-reply">回复</a>
+		</div>
+		<div class="replys">
+			<ul class="list-unstyled" *ngIf="comment.replys.length > 0" >
+				<li *ngFor="let reply of comment.replys">
+					<div class="reply-author-img">
+						<div class="img-wrap">
+							<img [src]="reply.author.img_path" width="100%" height="100%">
+						</div>
+					</div>
+					<div class="reply-comment">
+						<div class="line1">
+							<span class="author-name">{{reply.author.name}}</span>
+							<span class="author-rank rank" [ngClass]="reply.author.rank"></span>
+							<div class="reply-reply" *ngIf="reply.reply_to">
+								<span>回复</span>
+								<span>@{{reply.reply_to}}</span>
+							</div>
+							<span class="comment-content">{{reply.content}}</span>
+						</div>
+						<div class="line2">
+							<span class="reply-update-time">{{reply.update_time}}</span>
+							<a href="javascript:;" class="btn-thumb-up">
+								<span class="icon"></span>
+								<span class="count">{{reply.thumb_up_amount}}</span>
+							</a>
+							<a href="javascript:;" class="btn-reply">回复</a>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

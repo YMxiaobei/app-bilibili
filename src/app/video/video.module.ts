@@ -16,12 +16,20 @@ import { PlayerSetting2Component } from './components/player-setting2/player-set
 import { BottomToolbarComponent } from './components/bottom-toolbar/bottom-toolbar.component';
 import { VideoFooterComponent } from './components/video-footer/video-footer.component';
 import { VideoCommentsComponent } from './components/video-comments/video-comments.component';
+import { PaginationControllorComponent } from './components/pagination-controllor/pagination-controllor.component';
+import { VideoCommentComponent } from './components/video-comment/video-comment.component';
+import { SentMyCommentComponent } from './components/sent-my-comment/sent-my-comment.component';
+import { VideoTagsComponent } from './components/video-tags/video-tags.component';
+import { VideoService } from './video.service';
+import { SToTimeStrPipe } from 'app/pipes/s-to-time-str.pipe';
+import { DanmukuComponent } from './components/danmuku/danmuku.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule
   ],
+  providers: [ VideoService ],
   declarations: [
   	VideoComponent, 
   	VideoHeaderComponent, 
@@ -37,7 +45,13 @@ import { VideoCommentsComponent } from './components/video-comments/video-commen
   	PlayerSetting2Component,
   	BottomToolbarComponent,
   	VideoFooterComponent,
-  	VideoCommentsComponent
+  	VideoCommentsComponent,
+  	PaginationControllorComponent,
+  	VideoCommentComponent,
+  	SentMyCommentComponent,
+  	VideoTagsComponent,
+    SToTimeStrPipe,
+    DanmukuComponent
   ]
 })
 export class VideoModule { }

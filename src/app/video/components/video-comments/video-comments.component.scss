@@ -1,0 +1,90 @@
+@import "~compass-mixins/lib/compass";
+@import "src/assets/styles/icons-mixin.scss";
+@import "src/assets/styles/color.scss";
+@import "src/assets/styles/variable.scss";
+
+.video-coment {
+	width: 100%;
+	font-size: 12px;
+
+	.header {
+		width: 100%;
+		height: 20px;
+		line-height: 20px;
+		position: relative;
+
+		.comments-count {
+			font-size: 18px;
+			color: $font-color1;
+		}
+
+		.btn-check-delete-log {
+			color: $font-color2;
+			position: absolute;
+			top: 4px;
+			right: 0px;
+		}
+	}
+
+	.content {
+		width: 100%;
+		margin-top: 20px;
+
+		.nav {
+			width: 100%;
+			height: 34px;
+			line-height: 34px;
+			position: relative;
+			border-bottom: 1px solid $gray1;
+
+			a {
+				height: 100%;
+				font-size: 14px;
+				color: black;
+				display: block;
+				float: left;
+				position: relative;
+				overflow: hidden;
+				font-weight: bold;
+				bottom: -2px;
+			}
+
+			a.selected {
+				color: $blue1;
+
+				.bottom-mark {
+					width: 100%;
+					height: 1px;
+					background-color: $blue1;
+					position:  absolute;
+					bottom: 0px;
+					left: 0px;
+
+					span {
+						width: 4px;
+						height: 4px;
+						display: block;
+						background-color: $blue1;
+						margin: -2px auto 0px auto;
+
+						@include transform(rotate(45deg));
+					}
+				}
+			}
+
+			a.orther-by-heat {
+				margin-left: 30px;
+			}
+
+			.pagination-controllor-wrap {
+				position: absolute;
+				right: 0px;
+			}
+		}
+
+		.sent-my-comment-wrap {
+			width: 100%;
+			margin-top: 20px;
+		}
+	}
+}

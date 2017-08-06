@@ -7,9 +7,9 @@
 					<li>
 						<div class="path">
 							<ul class="list-unstyled">
-								<li *ngFor="let path of video.paths">
+								<li *ngFor="let path of video.paths; let l = last">
 									<a href="javascript;;">{{path}}</a>
-									>
+									<span *ngIf="!l">></span>
 								</li>
 							</ul>
 						</div>

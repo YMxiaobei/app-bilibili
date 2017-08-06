@@ -9,6 +9,10 @@ $content-width: 146px;
 $update-time-width: 68px;
 $content-height: 593px;
 
+a {
+	text-decoration: none;
+}
+
 .main {
 	width: 100%;
 	font-size: 12px;
@@ -165,6 +169,10 @@ $content-height: 593px;
 							}
 						}
 					}
+
+					li.beIgnored {
+						color: #ccd0d7;
+					}
 				}
 			}
 
@@ -261,7 +269,6 @@ $content-height: 593px;
 
 			.ignore-list {
 				width: 100%;
-				height: 248px;
 				margin-top: 21px;
 
 				.list-switch {
@@ -278,7 +285,6 @@ $content-height: 593px;
 					.btn-list-switch {
 						width: 29px;
 						height: 100%;
-						border: 1px  solid $blue1;
 						border-radius: 10px;
 						position: relative;
 						display: inline-block;
@@ -292,6 +298,22 @@ $content-height: 593px;
 							position: absolute;
 							border-radius: 50%;
 							top: 1px;
+							@include transition ( left 0.2s );
+						}
+					}
+
+					.off {
+						border: 1px  solid $font-color2;
+
+						span {
+							background-color: $font-color2;
+						}
+					}
+
+					.on {
+						border: 1px  solid $blue1;
+
+						span {
 							background-color: $blue1;
 						}
 					}
@@ -391,6 +413,7 @@ $content-height: 593px;
 							width: 230px;
 							margin: 0px auto;
 							margin-top: 10px;
+							overflow: hidden;
 
 							span {
 								display: block;
@@ -414,6 +437,67 @@ $content-height: 593px;
 							span.t-operation {
 								width: 37px;
 							}
+						}
+
+						ul {
+							margin-top: 5px;
+						}
+
+						li {
+							width: 230px;
+							margin: 0px auto;
+							height: 20px;
+							line-height: 20px;
+
+							span {
+								display: block;
+								float: left;
+								height: 100%;
+							}
+
+							.type {
+								width: 45px;
+							}
+
+							.txt {
+								width: 86px;
+							}
+
+							.state {
+								width: 41px;
+
+								color: $blue1;
+								cursor: pointer;
+							}
+
+							.operation {
+								width: 37px;
+								cursor: pointer;
+
+								&:hover {
+									color: $blue1;
+								}
+
+								&:before {
+									line-height: 20px;
+								}
+							} 
+
+							.synchronous {
+								width: 20px;
+
+								&:before {
+									line-height: 20px;
+								}
+							}
+						}
+
+						li.on {
+							color: $font-color1;
+						}
+
+						li.off {
+							color: $font-color2;
 						}
 					}
 
@@ -479,6 +563,12 @@ $content-height: 593px;
 								}
 							}
 						}
+
+						a.selected {
+							.icon {
+								@include i-forbid-scroll-hover;
+							}
+						}
 					}
 
 					li.type-top {
@@ -491,6 +581,12 @@ $content-height: 593px;
 								.icon {
 									@include i-forbid-top-hover;
 								}
+							}
+						}
+
+						a.selected {
+							.icon {
+								@include i-forbid-top-hover;
 							}
 						}
 					}
@@ -507,6 +603,12 @@ $content-height: 593px;
 								}
 							}
 						}
+
+						a.selected {
+							.icon {
+								@include i-forbid-bottom-hover;
+							}
+						}
 					}
 
 					li.type-colorful {
@@ -519,6 +621,12 @@ $content-height: 593px;
 								.icon {
 									@include i-forbid-colorful-hover;
 								}
+							}
+						}
+
+						a.selected {
+							.icon {
+								@include i-forbid-colorful-hover;
 							}
 						}
 					}
@@ -536,7 +644,11 @@ $content-height: 593px;
 							}
 						}
 
-						
+						a.selected {
+							.icon {
+								@include i-forbid-common-hover;
+							}
+						}
 					}
 
 					li.type-subtitles {
@@ -551,6 +663,12 @@ $content-height: 593px;
 								}
 							}
 						}
+
+						a.selected {
+							.icon {
+								@include i-forbid-subtitles-hover;
+							}
+						}
 					}
 
 					li.type-special {
@@ -563,6 +681,12 @@ $content-height: 593px;
 								.icon {
 									@include i-forbid-special-hover;
 								}
+							}
+						}
+
+						a.selected {
+							.icon {
+								@include i-forbid-special-hover;
 							}
 						}
 					}

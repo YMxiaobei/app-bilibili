@@ -1,0 +1,168 @@
+@import "~compass-mixins/lib/compass";
+@import "src/assets/styles/icons-mixin.scss";
+@import "src/assets/styles/color.scss";
+@import "src/assets/styles/variable.scss";
+
+$left-width: 872px;
+
+.video-comment {
+	width: 100%;
+	padding: 25px 0px;
+
+	.author-img {
+		width: 80px;
+		display: inline-block;
+		vertical-align: top;
+
+		.img-wrap {
+			width: 48px;
+			height: 48px;
+			overflow: hidden;
+			background-color: $gray1;
+			border-radius: 50%;
+			margin-left: 10px;
+			margin-top: ( 64px - 48px ) / 2;
+		}
+	}
+
+	.comment {
+		width: $left-width - 85 - 6;
+		margin-left: 6px;
+		display: inline-block;
+
+		.author-name {
+			width: 100%;
+			color: $font-color3;
+			font-weight: bold;
+
+			.rank {
+				margin-left: 4px;
+			}
+
+		}
+
+		.content {
+			color: black;
+			margin-top: 5px;
+
+			p {
+				margin-bottom: 0px;
+			}
+		}
+
+		.comment-info {
+			color: $font-color2;
+			margin-top: 5px;
+
+			span, a {
+				margin-left: 20px;
+				display: inline-block;
+				vertical-align: top;
+				color: $font-color2;
+			}
+
+			span.floor-no {
+				margin-left: 0px;
+			}
+
+			.btn-thumb-up, .btn-thumb-down {
+				span {
+					color: $font-color2;	
+					margin-left: 0px;
+				}
+
+				.icon {
+					@include i-thumb-up;
+					vertical-align: top;
+				}
+
+				&:hover {
+					.icon {
+						@include i-thumb-up-hover;
+						vertical-align: top;
+					}
+				}
+			}
+
+			.btn-thumb-down {
+				.icon {
+					@include i-thumb-down;
+				}
+
+				&:hover {
+					.icon {
+						@include i-thumb-down-hover;
+					}
+				}
+			}
+		}
+
+		.replys {
+			width: 100%;
+			margin-top: 10px;
+
+			ul {
+				li {
+					margin-top: 20px;
+					.reply-author-img {
+						width: 27px;
+						display: inline-block;
+						vertical-align: top;
+
+						.img-wrap {
+							width: 25px;
+							height: 25px;
+							border-radius: 50%;
+							overflow: hidden;
+						}
+					}
+
+					.reply-comment {
+						width: $left-width - 85 - 6 - 32 - 6;
+						margin-left: 6px;
+						display: inline-block;
+
+						.line1 {
+							width: 100%;
+
+							.comment-content {
+								margin-left: 10px;
+								display: inline-block;
+								color: black;
+							}
+						}
+
+						.line2 {
+							width: 100%;
+							margin-top: 5px;
+
+							a {
+								color: $font-color2;
+							}
+
+							.btn-thumb-up, .btn-reply {
+								margin-left: 20px;
+							}
+
+							.btn-thumb-up {
+								display: inline-block;
+								
+								.icon {
+									@include i-thumb-up;
+									vertical-align: top;
+								}
+
+								&:hover {
+									.icon {
+										@include i-thumb-up-hover;
+										vertical-align: top;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

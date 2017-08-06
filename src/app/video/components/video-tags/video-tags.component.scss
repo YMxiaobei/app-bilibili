@@ -1,0 +1,87 @@
+@import "~compass-mixins/lib/compass";
+@import "src/assets/styles/icons-mixin.scss";
+@import "src/assets/styles/color.scss";
+@import "src/assets/styles/variable.scss";
+
+.video-tags {
+	width: 100%;
+	height: 106px;
+	color: $font-color4;
+	border-bottom: 1px solid $gray1;
+
+	.line1 {
+		width: 100%;
+		margin-left: -10px;
+		height: 24px;
+		margin-top: 30px;
+		display: inline-block;
+		vertical-align: top;
+
+		ul {
+			margin-bottom: 0px;
+			float: left;
+
+			li {
+				height: 24px;
+				float: left;
+				padding: 0px 20px;
+				border: 1px solid $gray1;
+				border-radius: 12px;
+				line-height: 24px;
+				text-align: center;
+				margin-left: 10px;
+
+				a {
+					width: 100%;
+					height: 100%;
+					display: block;
+					color: $font-color4;
+				}
+			}
+		}
+
+		.input-new-tag {
+			height: 24px;
+			width: 24px;
+			border: 1px solid $gray1;
+			float: left;
+			margin-left: 10px;
+			border-radius: 50%;
+			text-align: center;
+
+			.btn-add-new-tag {
+				width: 24px;
+				height: 24px;
+				line-height: 24px;
+				display: block;
+				float: left;
+				color: $font-color4;
+			}
+		}
+	}
+
+	.line2 {
+		margin-top: 18px;
+		width: 100%;
+		display: inline-block;
+		vertical-align: top;
+
+		a {
+			color: $font-color4;
+			vertical-align: top;
+		}
+
+		.split-line {
+			height: 16px;
+			display: inline-block;
+			width: 1px;
+			background-color: $gray1;
+			margin-left: 10px;
+			vertical-align: top;
+		}
+
+		a.btn-check-tag-instructions {
+			margin-left: 10px;
+		}
+	}
+}

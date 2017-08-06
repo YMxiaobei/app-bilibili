@@ -1,14 +1,24 @@
 <div class="main" #main 
 	[ngStyle]="{
-		'width': width,
+		'width': _width,
 		'height': height,
-		'line-height.px': getLineHeight ( main )
+		'line-height.px': getLineHeight ( main ),
+		'bottom.px': bottom
+	}"
+	[ngClass]="{
+		'window': !isFullscreen,
+		'fullscreen': isFullscreen
 	}"
 >
 	<ul class="list-unstyled">
 		<li class="btn-play-pause c-btn">
-			<a href="javascript:;">
-				<span class="glyphicon glyphicon-play"></span>
+			<a href="javascript:;" (click)="playOrPause()" class="b">
+				<span class="glyphicon glyphicon-play" 
+					[ngClass]="{
+						'glyphicon-play': player.paused,
+						'glyphicon-pause': !player.paused
+					}"
+				></span>
 			</a>
 		</li>
 		<li class="scroll-bar" 
@@ -17,32 +27,36 @@
 			}"
 		>	
 			<div class="scroll-bar-wrap">
-				<app-scroll-bar [width]="main.offsetWidth - timer.offsetWidth - 40 - 24 * 5 - src_change.offsetWidth - 14">
-					
+				<app-scroll-bar 
+					[width]="main.offsetWidth - timer.offsetWidth - 40 - 24 * 5 - src_change.offsetWidth - 14"
+					[len]="video.duration"
+					(change)=" currentTimeChange ( $event ) "
+					[state]="current_time"
+				>
 				</app-scroll-bar>
 			</div>
 		</li>
 		<li class="timer" #timer>
-			<a href="javascript:;">
-				<span class="current-time">00:00</span>
+			<a href="javascript:;" class="b">
+				<span class="current-time">{{current_time | sToTimeStr}}</span>
 				/
-				<span class="duration">00:00</span>
+				<span class="duration">{{video.duration | sToTimeStr}}</span>
 			</a>
 		</li>
 		<li class="volume-controllor c-btn">
-			<a href="javascript:;">
+			<a href="javascript:;" class="b" (click)="show_volume=show_volume ? false : true">
 				<span class="glyphicon glyphicon-volume-up"></span>
 			</a>
-			<div class="volume-scroll-bar hidden">
+			<div class="volume-scroll-bar" [class.hidden]="!show_volume">
 				<div class="volume-cournt">
-					<span>{{current_volume}}</span>
+					<span>{{volume}}</span>
 				</div>
 				<div class="scroll-bar-wrap">
 					<app-scroll-bar
 						[dir]="'V'"
 						[height]="70"
 						[reverse]="true"
-						[default_state]="default_volume"
+						[default_state]="player.volume * 100"
 						[fill_styles]="{'background-color': 'gray'}"
 						(change)="volumeChange($event)"
 					></app-scroll-bar>
@@ -57,7 +71,7 @@
 					</li>
 				</ul>
 			</div>
-			<a href="javascript:;">
+			<a href="javascript:;" class="b">
 				<span>超清</span>
 			</a>
 		</li>
@@ -108,22 +122,22 @@
 				</div>
 				
 			</div>
-			<a href="javascript:;">
+			<a href="javascript:;" class="b">
 				<span class="glyphicon glyphicon-comment"></span>
 			</a>
 		</li>
 		<li class="loop-switch c-btn">
-			<a href="javascript:;">
+			<a href="javascript:;" class="b">
 				<span class="glyphicon glyphicon-repeat"></span>
 			</a>
 		</li>
 		<li class="size-mode-change c-btn">
-			<a href="javascript:;">
+			<a href="javascript:;" class="b">
 				<span class="glyphicon glyphicon-film"></span>
 			</a>
 		</li>
 		<li class="full-screen-switch c-btn">
-			<a href="javascript:;">
+			<a href="javascript:;" class="b" (click)="changePlayerMode ()">
 				<span class="glyphicon glyphicon-fullscreen"></span>
 			</a>
 		</li>

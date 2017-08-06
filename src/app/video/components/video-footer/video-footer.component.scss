@@ -1,0 +1,28 @@
+@import "~compass-mixins/lib/compass";
+@import "src/assets/styles/icons-mixin.scss";
+@import "src/assets/styles/color.scss";
+@import "src/assets/styles/variable.scss";
+
+$left-width: 872px;
+
+.video-footer {
+	width: $main_width;
+	font-size: 12px;
+	margin: 0px auto;
+
+	.left {
+		width: $left-width;
+
+		.video-introduction {
+			line-height: 20px;
+			color: $font-color4;
+			padding: 30px 0px;
+			border-bottom: 1px solid $gray1;
+		}
+
+		.video-comments-wrap {
+			margin-top: 30px;
+		}
+
+	}
+}

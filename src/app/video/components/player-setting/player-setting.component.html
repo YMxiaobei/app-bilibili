@@ -57,13 +57,21 @@
 			</div>
 			<div class="danmu-list-content">
 				<ul class="list-unstyled">
-					<li *ngFor="let danmu of video.danmus">
+					<li *ngFor="let danmu of video.danmus" [ngClass]="{'beIgnored':beIgnored( danmu.author.id )}">
 						<span class="apearence-time">{{danmu.apearance_time}}</span>
 						<span class="content" [title]="danmu.content">{{danmu.content | omitString:10}}</span>
-						<span class="update-time">{{danmu.update_time}}</span>
+						<span class="update-time" *ngIf="!beIgnored( danmu.author.id )">{{danmu.update_time}}</span>
+						<span class="label-beIgnored" *ngIf="beIgnored( danmu.author.id )">已屏蔽</span>
 						<div class="danmu-author-setting">
 							<a class="charge-this" href="javascript:;">举报</a>
-							<a class="ignore-this" href="javascript:;">屏蔽用户</a>
+							<a class="ignore-this" href="javascript:;" 
+								(click)="ignoreUser(danmu.author.id)" 
+								*ngIf="!beIgnored( danmu.author.id )"
+							>屏蔽用户</a>
+							<a class="cancel-ignore" href="javascript:;" 
+								(click)="cancelIgnoreUser(danmu.author.id)" 
+								*ngIf="beIgnored( danmu.author.id )"
+							>取消屏蔽</a>
 						</div>
 					</li>
 				</ul>
@@ -78,8 +86,14 @@
 					<label>
 						屏蔽列表
 					</label>
-					<a href="javascript:;" class="btn-list-switch">
-						<span></span>
+					<a href="javascript:;" class="btn-list-switch" 
+						[ngClass]="{
+							'on':show_ignore_list,
+							'off':!show_ignore_list
+						}" 
+						(click)="show_ignore_list=show_ignore_list ? false : true;slide_left=show_ignore_list ? 0 : 10"
+					>
+						<span [ngStyle]="{'left.px': slide_left}"></span>
 					</a>
 					<a href="javascript:;" class="btn-refresh-list">
 						<span class="icon glyphicon glyphicon-refresh"></span>
@@ -88,22 +102,31 @@
 				</div>
 				<div class="add-to-list">
 					<div class="select-type">
-						<select>
+						<select [(ngModel)]="ignore_txt_type">
 							<option value="txt">文本</option>
 							<option value="Rex">正则</option>
 						</select>
 					</div>
 					<div class="input">
-						<input type="txt" name="" placeholder="请输入关键词">
+						<input type="txt" name="" placeholder="请输入关键词" [(ngModel)]="ignore_txt">
 					</div>
-					<a href="javascript:;" class="btn-add">添加</a>
+					<a href="javascript:;" class="btn-add" (click)="setIgnoreTxt()">添加</a>
 				</div>
-				<div class="list-content">
+				<div class="list-content" *ngIf="show_ignore_list">
 					<div class="list-nav">
-						<a href="javscript:;" class="ignored-word selected">屏蔽词</a>
-						<a href="javscript:;" class="ignored-user">屏蔽用户</a>
+						<a href="javascript:;" class="ignored-word" 
+							[class.selected]="show_ignore_list_type==='words'"
+							(click)="show_ignore_list_type='words'"
+						>屏蔽词</a>
+						<a href="javascript:;" class="ignored-user" 
+							[class.selected]="show_ignore_list_type==='users'"
+							(click)="show_ignore_list_type='users'"
+						>屏蔽用户</a>
 					</div>
-					<div class="content ignored-word-content">
+					<div class="content ignored-word-content" [ngClass]="{
+						'ignored-word-content': show_ignore_list_type==='words',
+						'ignored-user-content': show_ignore_list_type==='users'
+					}">
 						<div class="list-header">
 							<span class="t-type">类别</span>
 							<span class="t-content">内容</span>
@@ -111,8 +134,33 @@
 							<span class="t-operation">操作</span>
 							<span class="t-synchronous">同步</span>
 						</div>
-						<ul class="list-unstyled">
-							<li></li>
+						<ul class="list-unstyled ignored-word-list" *ngIf="show_ignore_list_type==='words'">
+							<li *ngFor="let txt of filter.txts; let i = index" 
+								[ngClass]="{
+									'on':txt.state,
+									'off':!txt.state
+								}"
+							>
+								<span class="type">{{txt.type==='txt'?'文本':'正则'}}</span>
+								<span class="txt">{{txt.txt}}</span>
+								<span class="state" (click)="txt.state = txt.state ? false : true">{{txt.state?'启用':'关闭'}}</span>
+								<span class="operation glyphicon glyphicon-trash"></span>
+								<span class="synchronous glyphicon glyphicon-ok"></span>
+							</li>
+						</ul>
+						<ul class="list-unstyled ignore-user-list" *ngIf="show_ignore_list_type==='users'">
+							<li *ngFor="let user of filter.users; let i = index"
+								[ngClass]="{
+									'on':user.state,
+									'off':!user.state
+								}"
+							>
+								<span class="type">{{'用户'}}</span>
+								<span class="txt">{{user.id}}</span>
+								<span class="state" (click)="user.state = user.state ? false : true">{{user.state?'启用':'关闭'}}</span>
+								<span class="operation glyphicon glyphicon-trash"></span>
+								<span class="synchronous glyphicon glyphicon-ok"></span>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -122,43 +170,64 @@
 				<h1 class="title">按类型屏蔽</h1>
 				<ul class="list-unstyled">
 					<li class="type-scroll">
-						<a href="javascript:;">
+						<a href="javascript:;"
+							(click)="setIgnoreType ( 'scroll' )" 
+							[class.selected]="typeBeIgnored('scroll')"
+						>
 							<span class="icon"></span>
 							<span class="txt">滚动弹幕</span>
 						</a>
 					</li>
 					<li class="type-top">
-						<a href="javascript:;">
+						<a href="javascript:;" 
+							(click)="setIgnoreType ( 'top' )"
+							[class.selected]="typeBeIgnored('top')"
+						>
 							<span class="icon"></span>
 							<span class="txt">顶端弹幕</span>
 						</a>
 					</li>
 					<li class="type-bottom">
-						<a href="javascript:;">
+						<a href="javascript:;" 
+							(click)="setIgnoreType ( 'bottom' )"
+							[class.selected]="typeBeIgnored('bottom')"
+						>
 							<span class="icon"></span>
 							<span class="txt">底端弹幕</span>
 						</a>
 					</li>
 					<li class="type-colorful">
-						<a href="javascript:;">
+						<a href="javascript:;" 
+							(click)="setIgnoreType ( 'colorful' )"
+							[class.selected]="typeBeIgnored('colorful')"
+						>
 							<span class="icon"></span>
 							<span class="txt">彩色弹幕</span>
 						</a>
 					</li>
 					<li class="type-common">
-						<a href="javascript:;">
+						<a href="javascript:;" 
+							(click)="setIgnoreType ( 'normal' )"
+							[class.selected]="typeBeIgnored('normal')"
+						>
 							<span class="icon"></span>
 							<span class="txt">普通弹幕</span>
 						</a>
 					</li>
 					<li class="type-subtitles">
-						<a href="javascript:;">
+						<a href="javascript:;" 
+							(click)="setIgnoreType ( 'subtitle' )"
+							[class.selected]="typeBeIgnored('subtitle')"
+						>
 							<span class="icon"></span>
 							<span class="txt">字幕弹幕</span>
 						</a>
 					</li>
 					<li class="type-special">
-						<a href="javascript:;">
+						<a href="javascript:;" 
+							(click)="setIgnoreType ( 'special' )"
+							[class.selected]="typeBeIgnored('special')"
+						>
 							<span class="icon"></span>
 							<span class="txt">特殊弹幕</span>
 						</a>

@@ -7,13 +7,20 @@
 				<a href="javascript:;" class="btn-nest"></a>
 			</div>
 		</div>
-		<div class="play-zone"></div>
-		<div class="controllor">
-			<app-video-controllor
-				[height]="'100%'"
-				[width]="'100%'"
-				[video]="video"
-			></app-video-controllor>
+		<div class="video-box">
+			<video width="100%" height="100%" [src]="video.srcs[ 0 ].src" #player ></video>
+			<div class="danmuku-wrap">
+				<app-danmuku [danmus]="video.danmus" [currentTime]="player.currentTime"></app-danmuku>
+			</div>
+			<div class="controllor" [ngStyle]="{'bottom.px':controllor_position}">
+				<app-video-controllor
+					[height]="'100%'"
+					[width]="'100%'"
+					[video]="video"
+					[player]="player"
+					(fullscreenChange)="fullscreenChange ($event)"
+				></app-video-controllor>
+			</div>
 		</div>
 		<div class="danmu-editor">
 			<app-danmu-editor></app-danmu-editor>
@@ -25,7 +32,7 @@
 				<span>{{video.audience_amount}}</span>
 				人正在看, 894条弹幕
 			</div>
-			<a href="javascript:;" class="btn-function-setting">
+			<a href="javascript:;" class="btn-function-setting" (click)="show_player_setting2=true">
 				<span class="icon glyphicon glyphicon-cog"></span>
 			</a>
 			<a href="javascript:;" class="btn-setting-menu">
@@ -35,8 +42,8 @@
 		<div class="player-setting-wrap">
 			<app-player-setting [video]="video"></app-player-setting>
 		</div>
-		<div class="player-setting2-wrap">
-			<app-player-setting2></app-player-setting2>
+		<div class="player-setting2-wrap" *ngIf="show_player_setting2">
+			<app-player-setting2 (close)="show_player_setting2=$event"></app-player-setting2>
 		</div>
 		
 	</div>
