@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class DanmuEditorComponent implements OnInit {
 
   size: string = "small";
-  type: string = "scroll";		
+  type: string = "scroll";	
+  show: any = null;	
 
   constructor() { }
 

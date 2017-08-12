@@ -6,9 +6,75 @@
 		<div class="video-introduction">
 			<p>{{video.introduction}}</p>
 		</div>
+		<div class="recomment-video2">
+			<h1 class="title">看过该视频的还喜欢</h1>
+			<ul class="list-unstyled">
+				<li *ngFor="let v of video.recommends2">
+					<a [href]="v.link">
+						<div class="poster">
+							<img [src]="v.img_path" width="100%" height="100%">
+						</div>
+						<div class="title">
+							<p>{{v.title}}</p>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
 		<div class="video-comments-wrap">
 			<app-video-comments></app-video-comments>
 		</div>
 	</div>
-	<div class="right"></div>
+	<div class="right">
+		<div class="charge-users">
+			<div class="author">
+				<div class="author-name">
+					<span class="i-strip"></span>
+					<span class="txt">{{author.name}}</span>
+					<span class="i-plug"></span>
+				</div>
+				<div class="author-chargr-amount">
+					<span>历史充电人数: {{author.charge_amount}}</span>
+				</div>
+			</div>
+			<div class="nav">
+				<a href="javascript:;" class="total selected">
+					<span>本作品充电({{video.charge_users.length}}人)</span>
+					<div class="bottom-mark">
+						<span></span>
+					</div>
+				</a>
+				<a href="javascript:;" class="this-month">
+					<span>本月所有充电({{author.this_month_charge.length}}人)</span>
+					<div class="bottom-mark">
+						<span></span>
+					</div>
+				</a>
+			</div>
+			<ul class="charge-user-list total list-unstyled">
+				<li *ngFor="let user of video.charge_users; let i = index">
+					<div
+						[ngClass]="{
+							'first':  i===0,
+							'second': i===1,
+							'third': i===2,
+							'first-three': i < 3,
+							'after-three': i >= 3
+						}"
+					>
+						<div class="ranking" *ngIf="i >= 3">{{i+1}}</div>
+						<div class="head-portrait">
+							<img [src]="user.head_portrait_path" width="100%" height="100%">
+							
+						</div>
+						<div class="ranking2" *ngIf="i < 3"></div>
+						<div class="name">{{user.name}}</div>
+						<div class="rank-change"></div>
+					</div>
+				</li>
+			</ul>
+			<ul class="charge-user-list this-month list-unstyled"></ul>
+			<div  class="footer"></div>
+		</div>
+	</div>
 </div>

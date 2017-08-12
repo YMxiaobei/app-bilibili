@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class VideoFooterComponent implements OnInit {
 
   @Input() video: any = {};	
+  @Input() author: any;
 
   constructor() { }
 

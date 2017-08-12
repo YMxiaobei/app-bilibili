@@ -494,6 +494,54 @@
 	background-position: -1429px -798px;
 }
 
+@mixin i-strip {
+	@include public;
+
+	width: 30px;
+	height: 15px;
+	background-position: -655px -1369px;
+}
+
+@mixin i-plug {
+	@include public;
+
+	width: 15px;
+	height: 14px;
+	background-position: -664px -1433px;
+}
+
+@mixin i-battery-rank1 {
+	@include public;
+
+	width: 16px;
+	height: 26px;
+	background-position: -664px -1491px;
+}
+
+@mixin i-battery-rank2 {
+	@include public;
+
+	width: 16px;
+	height: 26px;
+	background-position: -664px -1555px;
+}
+
+@mixin i-battery-rank3 {
+	@include public;
+
+	width: 16px;
+	height: 26px;
+	background-position: -664px -1619px;
+}
+
+@mixin i-rank-up {
+	@include public;
+
+	width: 10px;
+	height: 11px;
+	background-position: -346px -2139px;
+}
+
 @mixin i-slide {
 	display: inline-block;
 	background-repeat: no-repeat;

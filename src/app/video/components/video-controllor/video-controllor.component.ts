@@ -26,7 +26,6 @@ export class VideoControllorComponent implements OnInit, AfterViewChecked {
   current_src: string = "超清";
   danmu_opacity: number = 100;
   duration: number;
-  show_volume: boolean = false;
   current_time: number = 0;
   isFullscreen: boolean = false;
   scroll_bar_length: number = 400; 

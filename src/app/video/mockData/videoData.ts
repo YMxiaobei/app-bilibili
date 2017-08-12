@@ -556,6 +556,95 @@ let mockVideo: any = {
       play_amount:  100000,
       commond_amount: 100000
     }
+  ],
+  recommends2: [
+    {
+      img_path: "",
+      title: "【熊叔实验室】如何在水面点火",
+      link: ""
+    },
+    {
+      src: "",
+      title: "【熊叔实验室】如何在水面点火",
+      link: ""
+    },
+    {
+      src: "",
+      title: "【熊叔实验室】如何在水面点火",
+      link: ""
+    },
+    {
+      src: "",
+      title: "【熊叔实验室】如何在水面点火",
+      link: ""
+    },
+    {
+      src: "",
+      title: "【熊叔实验室】如何在水面点火",
+      link: ""
+    }
+  ],
+  charge_users: [
+    {
+      head_portrait_path: "",
+      name: "齐天大吊"
+    },
+    {
+      head_portrait_path: "",
+      name: "齐天大吊"
+    },
+    {
+      head_portrait_path: "",
+      name: "齐天大吊"
+    },
+    {
+      head_portrait_path: "",
+      name: "齐天大吊"
+    },
+    {
+      head_portrait_path: "",
+      name: "齐天大吊"
+    },
+    {
+      head_portrait_path: "",
+      name: "齐天大吊"
+    },
+    {
+      head_portrait_path: "",
+      name: "齐天大吊"
+    },
+    {
+      head_portrait_path: "",
+      name: "齐天大吊"
+    },
+    {
+      head_portrait_path: "",
+      name: "齐天大吊"
+    },
+    {
+      head_portrait_path: "",
+      name: "齐天大吊"
+    },
+    {
+      head_portrait_path: "",
+      name: "齐天大吊"
+    },
+    {
+      head_portrait_path: "",
+      name: "齐天大吊"
+    },
+    {
+      head_portrait_path: "",
+      name: "齐天大吊"
+    },
+    {
+      head_portrait_path: "",
+      name: "齐天大吊"
+    },
+    {
+      head_portrait_path: "",
+      name: "齐天大吊"
+    }
   ]
 };
 
@@ -564,7 +653,70 @@ let mockUser: any = {
   introduction: "兴趣使然的休闲向up，ask点图提问：https://ask.fm/xiemuge 微博也叫@切肤子 但是很懒所以不怎么活动",
   contribute_amount: 22,
   fans_amount: 200000,
-  id_img: "/assets/img/id_img.jpg"
+  id_img: "/assets/img/id_img.jpg",
+  charge_amount: 5026,
+  this_month_charge: [
+    {
+      head_portrait_path: "",
+      name: "齐天大吊"
+    },
+    {
+      head_portrait_path: "",
+      name: "齐天大吊"
+    },
+    {
+      head_portrait_path: "",
+      name: "齐天大吊"
+    },
+    {
+      head_portrait_path: "",
+      name: "齐天大吊"
+    },
+    {
+      head_portrait_path: "",
+      name: "齐天大吊"
+    },
+    {
+      head_portrait_path: "",
+      name: "齐天大吊"
+    },
+    {
+      head_portrait_path: "",
+      name: "齐天大吊"
+    },
+    {
+      head_portrait_path: "",
+      name: "齐天大吊"
+    },
+    {
+      head_portrait_path: "",
+      name: "齐天大吊"
+    },
+    {
+      head_portrait_path: "",
+      name: "齐天大吊"
+    },
+    {
+      head_portrait_path: "",
+      name: "齐天大吊"
+    },
+    {
+      head_portrait_path: "",
+      name: "齐天大吊"
+    },
+    {
+      head_portrait_path: "",
+      name: "齐天大吊"
+    },
+    {
+      head_portrait_path: "",
+      name: "齐天大吊"
+    },
+    {
+      head_portrait_path: "",
+      name: "齐天大吊"
+    }
+  ]
 }
 
 export function getMockData ( data: string ) {

@@ -42,7 +42,8 @@
 				position: absolute;
 				bottom: 38px;
 				border-radius: 5px 5px 0px 0px;
-				left: 0px;
+				left: -300px;
+				@include transition( left 0.4s );
 				border: 1px solid $gray1;
 			}
 		}
@@ -58,7 +59,8 @@
 				border:  1px solid $gray1;
 				position: absolute;
 				bottom: 38px;
-				left: 0px;
+				left: -264px;
+				@include transition( left 0.4s );
 
 				.content {
 					width: 224px;

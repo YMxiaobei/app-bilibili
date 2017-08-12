@@ -1,8 +1,12 @@
 <div class="main">
 	<ul class="list-unstyled">
 		<li class="danmu-mode">
-			<a href="javascript:;"></a>
-			<div class="mode-select hidden">
+			<a href="javascript:;" (click)="show = show==='danmu-mode' ? null : 'danmu-mode' "></a>
+			<div class="mode-select"
+				[ngStyle]="{
+					'left.px': show==='danmu-mode' ? 0 : -264
+				}"
+			>
 				<div class="content">
 					<div class="font-size">
 						<label>字号</label>
@@ -37,8 +41,12 @@
 			</div>
 		</li>
 		<li class="danmu-color">
-			<a href="javascript:;"></a>
-			<div class="color-picker-wrap hidden">
+			<a href="javascript:;" (click)="show = show==='danmu-color' ? null : 'danmu-color' "></a>
+			<div class="color-picker-wrap" 
+				[ngStyle]="{
+					'left.px': show==='danmu-color' ? -40 : -300
+				}"
+			>
 				<app-color-picker></app-color-picker>
 			</div>
 		</li>

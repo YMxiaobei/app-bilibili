@@ -47,7 +47,7 @@
 			<a href="javascript:;" class="b" (click)="show_volume=show_volume ? false : true">
 				<span class="glyphicon glyphicon-volume-up"></span>
 			</a>
-			<div class="volume-scroll-bar" [class.hidden]="!show_volume">
+			<div class="volume-scroll-bar">
 				<div class="volume-cournt">
 					<span>{{volume}}</span>
 				</div>
@@ -64,19 +64,19 @@
 			</div>
 		</li>
 		<li class="src-change c-btn" #src_change>
-			<div class="src-select hidden">
+			<div class="src-select">
 				<ul class="list-unstyled">
 					<li *ngFor="let src of video.srcs" [ngClass]="{selected: src.name===current_src}">
 						<span>{{src.name}}</span>
 					</li>
 				</ul>
 			</div>
-			<a href="javascript:;" class="b">
+			<a href="javascript:;" class="b" (click)="show_src_select = show_src_select ? false : true">
 				<span>超清</span>
 			</a>
 		</li>
 		<li class="danmu-switch c-btn">
-			<div class="danmu-controllor hidden">
+			<div class="danmu-controllor">
 				<div class="content">
 					<div class="opacity">
 						<span class="opacity-show">{{danmu_opacity}}%</span>
@@ -122,7 +122,7 @@
 				</div>
 				
 			</div>
-			<a href="javascript:;" class="b">
+			<a href="javascript:;" class="b" (click)="show_danmu_controllor = show_danmu_controllor ? false : true">
 				<span class="glyphicon glyphicon-comment"></span>
 			</a>
 		</li>
